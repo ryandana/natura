@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/globals.css" />
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="libs/fontawesome-free-7.1.0-web/css/all.min.css" />
+
+    <script src="assets/js/accordion.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/quotes.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/animation.js"></script>
+  </head>
+  <body class="bg-background">
+    <!-- Header -->
+        <header class="absolute top-0 left-0 w-full z-50 bg-white transition-all">
+      <div class="max-w-7xl mx-auto w-full flex md:justify-normal justify-between items-center gap-x-12 lg:gap-x-24 md:px-0 px-4 py-4">
+        <!-- Logo -->
+        <a class="flex gap-2 items-center" href="index.html">
+          <img class="h-12 w-12 bg-white p-1 rounded-full object-contain" src="assets/icons/logo-green.webp" alt="logo" />
+          <span class="font-bold text-xl md:text-2xl text-primary">Naturia</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex justify-between items-center w-full gap-8">
+          <ul class="flex gap-2 items-center">
+            <li><a class="font-bold text-primary bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="index.html">Beranda</a></li>
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="event.html">Event</a></li>
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="edukasi.html">Edukasi</a></li>
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="pickup.html">Kirim Sampah</a></li>
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="marketplace.html">Marketplace</a></li>
+          </ul>
+
+          <!-- Profile -->
+          <div class="relative">
+            <button id="profileBtn" class="flex cursor-pointer items-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-primary px-4 py-2 rounded-full duration-200">
+              <img class="rounded-full w-8 h-8" src="assets/images/people/pfp.webp" alt="pfp" />
+              <i class="fa-solid fa-angle-down text-lg text-primary transition-transform duration-200" id="profileArrow"></i>
+            </button>
+            <!-- Profile Popup -->
+            <div id="profilePopup" class="absolute right-0 top-18 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-[100]">
+              <div class="px-4 py-3 border-b border-gray-100">
+                <p class="font-bold text-primary">Jane Doe</p>
+                <p class="text-sm text-gray-500">janedoe@naturia.com</p>
+              </div>
+              <a href="profile.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors duration-150 cursor-pointer">
+                <i class="fa-solid fa-user text-primary text-lg w-5 text-center"></i>
+                <span class="text-gray-700 font-medium">Profile</span>
+              </a>
+              <button class="flex items-center gap-3 w-full px-4 py-3 hover:bg-red-50 transition-colors duration-150 text-left">
+                <i class="fa-solid fa-door-open text-red-500 text-lg w-5 text-center"></i>
+                <span class="text-red-600 font-medium">Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 relative z-[55]">
+          <i class="fa-solid fa-bars text-2xl transition-all duration-300" id="hamburgerIcon"></i>
+          <i class="fa-solid fa-xmark text-2xl absolute transition-all duration-300 opacity-0 scale-0" id="closeIcon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 z-[9999] bg-white transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-between"
+    >
+      <!-- Close Button -->
+      <div class="absolute top-6 right-6">
+        <button
+          id="closeMobileMenu"
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+        >
+          <i class="fa-solid fa-xmark text-2xl text-gray-700"></i>
+        </button>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center flex-1 px-6 text-center space-y-10"
+      >
+        <a
+          href="index.html"
+          class="text-3xl font-semibold text-primary hover:text-primary transition-colors duration-200"
+        >
+          Beranda
+        </a>
+        <a
+          href="event.html"
+          class="text-3xl font-semibold hover:text-primary transition-colors duration-200"
+        >
+          Event
+        </a>
+        <a
+          href="edukasi.html"
+          class="text-3xl font-semibold hover:text-primary transition-colors duration-200"
+        >
+          Edukasi
+        </a>
+        <a
+          href="pickup.html"
+          class="text-3xl font-semibold hover:text-primary transition-colors duration-200"
+        >
+          Kirim Sampah
+        </a>
+        <a
+          href="marketplace.html"
+          class="text-3xl font-semibold hover:text-primary transition-colors duration-200"
+        >
+          Marketplace
+        </a>
+      </div>
+
+      <div class="border-t border-gray-200 px-6 py-6 bg-gray-50">
+        <div class="flex items-center gap-4">
+          <!-- Profile Picture -->
+          <img
+            class="rounded-full w-14 h-14"
+            src="assets/images/people/pfp.webp"
+            alt=""
+          />
+
+          <div class="flex flex-col gap-0">
+            <span class="font-semibold text-gray-800">Jane Doe</span>
+            <span class="text-sm text-gray-500">janedoe@naturia.com</span>
+            <!-- Saldo -->
+            <span class="text-sm font-medium text-primary">Saldo: Rp 245.000</span>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-6 mt-4">
+          <a
+            href="profile.html"
+            class="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200"
+          >
+            <i class="fa-solid fa-user text-lg"></i>
+            <span>Profile</span>
+          </a>
+          <button
+            class="flex cursor-pointer items-center gap-2 text-sm text-red-500 hover:text-red-600 transition-colors duration-200"
+          >
+            <i class="fa-solid fa-door-open text-red-500 text-lg"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-dvh w-full flex justify-center items-center px-4 sm:px-6 lg:px-8"
+      style="
+        background: url('assets/images/hero.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      "
+    >
+      <div class="absolute bottom-0 right-0 z-1">
+        <img src="assets/images/shape/shape.webp" alt="shape" />
+      </div>
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div
+        class="relative max-w-7xl w-full flex md:flex-row flex-col gap-12 items-center md:justify-between justify-center"
+      >
+        <!-- Left Side -->
+        <div class="flex flex-col gap-8">
+          <div
+            class="fade-up flex items-center bg-white/10 border border-white/20 rounded-full w-fit py-2 px-4 gap-2"
+          >
+            <i class="fa-solid fa-leaf text-secondary text-lg"></i>
+            <span class="text-white">Mari bergerak untuk kehidupan</span>
+          </div>
+
+          <h1
+            class="lg:text-7xl md:text-6xl text-4xl text-white font-bold max-w-3xl fade-up"
+          >
+            Bumi bukan warisan, tapi titipan untuk generasi berikutnya.
+          </h1>
+
+          <div id="quote-box" class="flex flex-col gap-2 text-white fade-up">
+            <p id="quote-text" class="max-w-xl text-lg"></p>
+            <p id="quote-author"></p>
+          </div>
+
+          <div class="flex md:flex-row flex-col gap-2">
+            <a
+              href="pickup.html"
+              class="fade-up group relative border-2 border-white/20 w-fit overflow-hidden rounded-full font-semibold flex items-center justify-center gap-3 md:px-6 md:py-4 px-4 py-3 text-white bg-white/20 transition-all duration-500"
+            >
+              <span class="relative z-10 text-lg group-hover:text-primary">
+                Mulai Kontribusi
+              </span>
+              <div
+                class="bg-secondary group-hover:bg-primary p-1 flex items-center rounded-full relative z-10 transition-colors duration-500"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-xl text-primary group-hover:text-secondary"
+                ></i>
+              </div>
+              <span
+                class="absolute inset-0 bg-secondary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="min-h-dvh w-full flex px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
+      <div
+        class="mx-auto max-w-7xl w-full flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-8 lg:gap-12"
+      >
+        <div
+          class="flex w-full lg:w-1/2 h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] order-2 lg:order-1 justify-center items-center p-4 sm:p-6 lg:p-8 fade-up"
+        >
+          <div class="w-full h-full max-w-lg">
+            <img
+              class="w-full h-full object-contain"
+              src="assets/images/about.png"
+              alt="About Us"
+            />
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-4 sm:gap-6 w-full lg:w-1/2 order-1 lg:order-2"
+        >
+          <div class="flex items-center gap-3 fade-up">
+            <i
+              class="fa-solid fa-leaf text-primary text-2xl sm:text-3xl font-medium"
+            ></i>
+            <span class="text-gray-text text-base sm:text-lg">
+              Tentang Kami
+            </span>
+          </div>
+
+          <h1
+            class="text-primary text-3xl md:text-4xl lg:text-5xl max-w-3xl font-bold fade-up"
+          >
+            Lindungi lingkungan. Dapatkan manfaat nyata.
+          </h1>
+
+          <div
+            class="grid grid-cols-2 gap-2 sm:gap-3"
+            role="tablist"
+            aria-label="About tabs"
+          >
+            <button
+              id="tabTentangKami"
+              type="button"
+              role="tab"
+              aria-controls="panelTentangKami"
+              aria-selected="false"
+              class="fade-up px-3 sm:px-4 py-2 sm:py-3 text-base sm:text-lg font-medium bg-secondary text-primary rounded-full hover:bg-primary hover:text-secondary text-center"
+            >
+              Tentang Kami
+            </button>
+            <button
+              id="tabSejarah"
+              type="button"
+              aria-controls="panelSejarah"
+              aria-selected="true"
+              class="fade-up px-3 sm:px-4 py-2 sm:py-3 text-base sm:text-lg font-medium bg-primary text-secondary rounded-full hover:bg-primary hover:text-secondary text-center"
+            >
+              Sejarah
+            </button>
+            <button
+              id="tabVisi"
+              type="button"
+              role="tab"
+              aria-controls="panelVisi"
+              aria-selected="false"
+              class="fade-up px-3 sm:px-4 py-2 sm:py-3 text-base sm:text-lg font-medium bg-secondary text-primary rounded-full hover:bg-primary hover:text-secondary text-center"
+            >
+              Visi
+            </button>
+            <button
+              id="tabMisi"
+              type="button"
+              role="tab"
+              aria-controls="panelMisi"
+              aria-selected="false"
+              class="fade-up px-3 sm:px-4 py-2 sm:py-3 text-base sm:text-lg font-medium bg-secondary text-primary rounded-full hover:bg-primary hover:text-secondary text-center"
+            >
+              Misi
+            </button>
+          </div>
+
+          <div class="mt-4 sm:mt-6 min-h-[80px] fade-up">
+            <div id="panelSejarah" role="region" aria-labelledby="tabSejarah">
+              <p class="text-gray-text mb-3 text-lg leading-relaxed">
+                Naturia berdiri pada tahun 2025 dari kegelisahan masyarakat
+                terhadap masalah sampah di sekitar mereka. Berawal dari aksi
+                sederhana mengumpulkan plastik di lingkungan, gerakan ini tumbuh
+                menjadi sebuah platform digital. Naturia kini menghubungkan
+                masyarakat dengan mitra daur ulang, dan marketplace ramah
+                lingkungan. Selain itu, Naturia juga aktif mengadakan berbagai
+                kegiatan lingkungan seperti aksi bersih-bersih, workshop daur
+                ulang, hingga kampanye edukasi bersama komunitas. Perjalanan ini
+                menunjukkan bahwa langkah kecil bisa berkembang menjadi gerakan
+                yang membawa perubahan nyata yang besar.
+              </p>
+            </div>
+            <div
+              id="panelVisi"
+              role="region"
+              aria-labelledby="tabVisi"
+              class="hidden"
+            >
+              <p class="text-gray-text mb-3 text-lg leading-relaxed">
+                Menjadi platform lingkungan terdepan di Indonesia yang mengubah
+                cara pandang masyarakat terhadap sampah. Bagi Naturia, sampah
+                bukan beban, melainkan sumber daya bernilai yang dapat dikelola,
+                dimanfaatkan, dan dikembalikan menjadi manfaat bagi banyak
+                orang.
+              </p>
+            </div>
+            <div
+              id="panelMisi"
+              role="region"
+              aria-labelledby="tabMisi"
+              class="hidden"
+            >
+              <ol
+                class="text-gray-text list-decimal mb-3 text-lg leading-relaxed space-y-3"
+              >
+                <li>
+                  Mempermudah masyarakat dalam mengelola sampah melalui sistem
+                  digital yang praktis dan transparan.
+                </li>
+                <li>
+                  Menghubungkan masyarakat dengan mitra daur ulang terpercaya
+                  untuk memastikan sampah diolah secara tepat.
+                </li>
+                <li>
+                  Menyediakan sistem bank sampah dan marketplace hijau yang memberi
+                  nilai ekonomi bagi setiap aksi peduli lingkungan.
+                </li>
+                <li>
+                  Menyelenggarakan kegiatan edukasi, kampanye, dan event
+                  lingkungan untuk meningkatkan kesadaran publik.
+                </li>
+                <li>
+                  Membangun komunitas yang aktif, dan kolaboratif dalam
+                  menciptakan gaya hidup berkelanjutan.
+                </li>
+              </ol>
+            </div>
+            <div
+              id="panelTentangKami"
+              role="region"
+              aria-labelledby="tabTentangKami"
+              class="hidden"
+            >
+              <p class="text-gray-text mb-3 text-lg leading-relaxed">
+                Naturia lahir dari semangat anak muda yang ingin mencari solusi
+                nyata atas masalah sampah. Di sini, siapa pun bisa ikut
+                berkontribusi dengan cara sederhana namun berdampak. Kami
+                mempermudah Anda mengelola sampah dan menghasilkan uang,
+                berbelanja produk ramah lingkungan di marketplace hijau,
+                mengikuti kegiatan komunitas, hingga belajar lewat konten
+                edukasi. Naturia percaya bahwa cara hidup dengan bertanggung
+                jawab terhadap alam bisa dijalani setiap hari dengan cara yang
+                mudah, seru, dan bermanfaat untuk semua orang.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="flex flex-col items-center gap-3 sm:gap-4 mb-4">
+            <div class="flex items-center gap-2 sm:gap-3 fade-up">
+              <i
+                class="fa-solid fa-leaf text-primary text-xl sm:text-2xl lg:text-3xl font-medium"
+              ></i>
+              <span class="text-gray-text text-sm sm:text-base lg:text-lg">
+                Cara Kerja
+              </span>
+            </div>
+
+            <h2
+              class="md:text-5xl text-3xl font-bold text-primary mb-0 fade-up"
+            >
+              Bagaimana Naturia Bekerja?
+            </h2>
+          </div>
+
+          <p class="text-lg text-gray-text max-w-2xl mx-auto fade-up">
+            Tiga langkah mudah untuk berkontribusi dalam mengurangi sampah
+            plastik dan mendapatkan penghasilan
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-6 fade-up">
+          <!-- Card 1 -->
+          <div
+            class="bg-card rounded-xl overflow-hidden transition-shadow duration-300"
+          >
+            <div class="p-8">
+              <!-- Icon & Number -->
+              <div class="flex items-center justify-between mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-user-plus text-secondary text-3xl"></i>
+                </div>
+                <div class="text-6xl font-bold text-primary/10 leading-none">
+                  01
+                </div>
+              </div>
+
+              <h3 class="text-2xl font-bold text-primary mb-3">
+                Daftar & Verifikasi
+              </h3>
+              <p class="text-gray-text leading-relaxed mb-4">
+                Buat akun Naturia dengan mudah dan verifikasi identitas Anda.
+                Dapatkan akses ke semua fitur dan layanan kami.
+              </p>
+
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Registrasi gratis</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Verifikasi cepat</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Dashboard personal</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-card rounded-xl overflow-hidden transition-shadow duration-300"
+          >
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-box text-secondary text-3xl"></i>
+                </div>
+                <div class="text-6xl font-bold text-primary/10 leading-none">
+                  02
+                </div>
+              </div>
+
+              <h3 class="text-2xl font-bold text-primary mb-3">
+                Kumpulkan & Jadwalkan
+              </h3>
+              <p class="text-gray-text leading-relaxed mb-4">
+                Kumpulkan sampah plastik Anda dan jadwalkan pickup sesuai waktu
+                yang Anda inginkan dengan mudah.
+              </p>
+
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Pilih waktu fleksibel</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Tracking real-time</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Notifikasi otomatis</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="bg-card rounded-xl overflow-hidden transition-shadow duration-300"
+          >
+            <div class="p-8">
+              <div class="flex items-center justify-between mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-primary flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-wallet text-secondary text-3xl"></i>
+                </div>
+                <div class="text-6xl font-bold text-primary/10 leading-none">
+                  03
+                </div>
+              </div>
+
+              <h3 class="text-2xl font-bold text-primary mb-3">
+                Dapatkan Uang
+              </h3>
+              <p class="text-gray-text leading-relaxed mb-4">
+                Dapatkan uang langsung dari setiap deposit sampah Anda.
+                Tarik ke rekening bank atau e-wallet kapan saja.
+              </p>
+
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Saldo otomatis masuk</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Tarik dana ke rekening</span>
+                </li>
+                <li class="flex items-center gap-2 text-sm text-primary">
+                  <i class="fa-solid fa-circle-check text-primary"></i>
+                  <span>Harga transparan per kg</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-6 w-full">
+          <a
+            href="pickup.html"
+            class="fade-up group relative border-2 border-white w-fit overflow-hidden rounded-full font-semibold flex items-center justify-center gap-3 md:px-6 md:py-4 px-4 py-3 text-primary bg-secondary transition-all duration-500"
+          >
+            <span class="relative z-10 text-lg group-hover:text-secondary">
+              Mulai Kontribusi
+            </span>
+            <div
+              class="bg-primary group-hover:bg-secondary p-1 flex items-center rounded-full relative z-10 transition-colors duration-500"
+            >
+              <i
+                class="fa-solid fa-angle-right text-xl text-secondary group-hover:text-primary"
+              ></i>
+            </div>
+            <span
+              class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
+            ></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section
+      class="min-h-dvh max-w-7xl mx-auto w-full flex flex-col justify-center items-center py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <!-- Header -->
+      <div
+        class="flex flex-col items-center gap-3 sm:gap-4 mb-8 sm:mb-12 fade-up"
+      >
+        <div class="flex items-center gap-2 sm:gap-3">
+          <i
+            class="fa-solid fa-leaf text-primary text-xl sm:text-2xl lg:text-3xl font-medium"
+          ></i>
+          <span class="text-gray-text text-sm sm:text-base lg:text-lg">
+            Galeri
+          </span>
+        </div>
+
+        <h1
+          class="text-primary text-center text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+        >
+          Galeri Aksi
+        </h1>
+
+        <p
+          class="text-gray-text text-center text-sm sm:text-base lg:text-lg max-w-2xl"
+        >
+          Lihat kegiatan komunitas, dan momen restorasi yang menginspirasi aksi
+          kecil dengan dampak besar.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 grid-cols-1 items-stretch gap-4 fade-up">
+        <div class="w-full h-full overflow-hidden rounded-lg">
+          <img
+            class="gallery-img object-cover rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+            src="assets/images/pantai-bali-2.webp"
+            alt="Kampanye Bersih Pantai"
+            data-desc="Kampanye Bersih Pantai Kuta: aksi bersih pantai, edukasi limbah, +Rp 50.000 untuk partisipasi."
+          />
+        </div>
+        <div class="w-full h-full overflow-hidden rounded-lg">
+          <img
+            class="gallery-img h-full object-cover rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+            src="assets/images/raja-ampat.webp"
+            alt="Rehabilitasi Terumbu Karang"
+            data-desc="Rehabilitasi Terumbu Karang di Raja Ampat: penanaman bibit karang dan edukasi ekosistem laut."
+          />
+        </div>
+        <div class="w-full h-full overflow-hidden rounded-lg">
+          <img
+            class="gallery-img object-cover rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+            src="assets/images/workshop-sampah.webp"
+            alt="Workshop Edukasi Sampah"
+            data-desc="Workshop Edukasi & Aksi: olah sampah plastik jadi produk baru dan edukasi pengurangan sampah."
+          />
+        </div>
+        <div class="w-full h-full overflow-hidden rounded-lg">
+          <img
+            class="gallery-img object-cover rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+            src="assets/images/pencegahan-kebakaran.webp"
+            alt="Pencegahan Kebakaran Hutan"
+            data-desc="Pencegahan Kebakaran Hutan: edukasi pemadaman dini dan pelatihan relawan di Kalimantan."
+          />
+        </div>
+        <div class="w-full h-full overflow-hidden rounded-lg">
+          <img
+            class="gallery-img object-cover rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+            src="assets/images/mangrove.webp"
+            alt="Restorasi Mangrove"
+            data-desc="Restorasi Mangrove: menanam bibit mangrove untuk pesisir yang tangguh dan habitat satwa pesisir."
+          />
+        </div>
+        <div class="w-full h-full overflow-hidden rounded-lg">
+          <img
+            class="gallery-img object-cover rounded-lg cursor-pointer transition-transform duration-500 hover:scale-105"
+            src="assets/images/sungai.webp"
+            alt="Aksi Bersih Sungai"
+            data-desc="Aksi Bersih Sungai Citarum: bersih-bersih dan edukasi pengelolaan limbah untuk pulihkan fungsi sungai."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black/60 backdrop-blur-lg hidden overflow-hidden rounded-lg items-center justify-center z-[9999]"
+      aria-hidden="true"
+    >
+      <div class="relative max-w-3xl w-full px-4">
+        <img
+          id="lightboxImg"
+          class="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
+          src=""
+          alt=""
+        />
+
+        <p
+          id="lightboxDesc"
+          class="mt-4 mx-auto text-center text-gray-100 text-lg max-w-2xl"
+        ></p>
+        <button
+          id="lightboxClose"
+          class="absolute top-2 right-6 z-[10000]"
+          aria-label="Close lightbox"
+        >
+          <i
+            class="fa-solid fa-xmark bg-white/10 border-2 border-white/20 rounded-full p-2 text-white text-2xl"
+          ></i>
+        </button>
+      </div>
+    </div>
+
+    <section class="py-12 lg:px-0 px-4">
+      <div class="mx-auto w-full max-w-7xl">
+        <div
+          class="flex w-full md:items-center items-start gap-y-6 md:flex-row flex-col md:justify-between"
+        >
+          <div class="flex flex-col gap-4 sm:gap-6 w-full lg:w-1/2">
+            <div class="flex items-center gap-3 fade-up">
+              <i
+                class="fa-solid fa-leaf text-primary text-2xl sm:text-3xl font-medium"
+              ></i>
+              <span class="text-gray-text text-base sm:text-lg">
+                Event Terbaru
+              </span>
+            </div>
+
+            <h1
+              class="text-primary text-3xl md:text-4xl lg:text-5xl max-w-3xl font-bold fade-up"
+            >
+              Berpartisipasi dalam Event
+            </h1>
+          </div>
+          <a
+            href="event.html"
+            class="fade-up group md:flex hidden relative border-2 border-white w-fit overflow-hidden rounded-full font-semibold items-center justify-center gap-3 md:px-6 md:py-4 px-6 py-3 text-primary bg-secondary transition-all duration-500"
+          >
+            <span
+              class="relative z-10 md:text-lg text-base group-hover:text-secondary"
+            >
+              Lihat Semua
+            </span>
+            <div
+              class="bg-primary group-hover:bg-secondary p-1 flex items-center rounded-full relative z-10 transition-colors duration-500"
+            >
+              <i
+                class="fa-solid fa-angle-right text-xl text-secondary group-hover:text-primary"
+              ></i>
+            </div>
+            <span
+              class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
+            ></span>
+          </a>
+        </div>
+
+        <!-- Cards Grid -->
+        <div
+          class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-12 fade-up"
+        >
+          <!-- 1 -->
+          <div class="flex flex-col rounded-xl bg-card group fade-up">
+            <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+              <img
+                class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
+                src="assets/images/pantai-bali-2.webp"
+                alt="collecting-trash"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+              ></div>
+            </div>
+            <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
+              <div class="flex items-center gap-2 mb-3">
+                <div
+                  class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-calendar-days text-lg"></i>
+                  <span class="text-sm">28 Oktober 2025</span>
+                </div>
+                <div
+                  class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-location-dot text-lg"></i>
+                  <span class="text-sm">Pantai Kuta, Bali</span>
+                </div>
+              </div>
+              <div class="flex flex-col flex-1 gap-3">
+                <h1 class="text-3xl font-semibold text-primary">
+                  Kampanye Bersih Pantai dan Kesadaran Lingkungan 2025
+                </h1>
+                <p class="line-clamp-5">
+                  Kampanye Bersih Pantai dan Kesadaran Lingkungan 2025 adalah
+                  gerakan kolaboratif yang mengajak masyarakat, komunitas lokal,
+                  pelajar, hingga wisatawan untuk bersama-sama menjaga keindahan
+                  Pantai Kuta, Bali. Melalui aksi nyata membersihkan sampah
+                  plastik, edukasi pengelolaan limbah, serta diskusi interaktif
+                  tentang dampak polusi laut, kegiatan ini bertujuan menumbuhkan
+                  rasa cinta dan tanggung jawab terhadap bumi.
+                </p>
+              </div>
+              <div
+                class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              >
+                <i class="fa-solid fa-seedling text-lg"></i>
+                <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              </div>
+              <div class="flex items-center gap-x-2 text-primary">
+                <img
+                  src="assets/images/people/pfp.webp"
+                  class="rounded-full w-8 h-8"
+                  alt="pfp"
+                />
+                <span class="text-sm">Ahmad Fauzi</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                
+                <span>Lebih Lanjut</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="flex flex-col rounded-xl bg-card group fade-up">
+            <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+              <img
+                class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
+                src="assets/images/raja-ampat.webp"
+                alt="coral-reef"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+              ></div>
+            </div>
+            <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
+              <div class="flex items-center gap-2 mb-3">
+                <div
+                  class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-calendar-days text-lg"></i>
+                  <span class="text-sm">12 November 2025</span>
+                </div>
+                <div
+                  class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-location-dot text-lg"></i>
+                  <span class="text-sm">Raja Ampat, Papua Barat</span>
+                </div>
+              </div>
+              <div class="flex flex-col flex-1 gap-3">
+                <h1 class="text-3xl font-semibold text-primary">
+                  Rehabilitasi Terumbu Karang untuk Laut yang Sehat
+                </h1>
+                <p class="line-clamp-5">
+                  Bersama komunitas lokal, kegiatan ini berfokus pada penanaman
+                  bibit karang dan edukasi tentang pentingnya menjaga ekosistem
+                  laut. Terumbu karang adalah rumah bagi ribuan spesies laut
+                  yang kini terancam oleh polusi dan perubahan iklim.
+                </p>
+              </div>
+              <div
+                class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              >
+                <i class="fa-solid fa-seedling text-lg"></i>
+                <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              </div>
+              <div class="flex items-center gap-x-2 text-primary">
+                <img
+                  src="assets/images/people/martina.webp"
+                  class="rounded-full w-8 h-8"
+                  alt="pfp"
+                />
+                <span class="text-sm">Maria Yohana</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                
+                <span>Lebih Lanjut</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="flex flex-col rounded-xl bg-card group fade-up">
+            <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+              <img
+                class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
+                src="assets/images/workshop-sampah.webp"
+                alt="plastic-waste"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+              ></div>
+            </div>
+            <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
+              <div class="flex items-center gap-2 mb-3">
+                <div
+                  class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-calendar-days text-lg"></i>
+                  <span class="text-sm">20 Januari 2026</span>
+                </div>
+                <div
+                  class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
+                >
+                  <i class="fa-solid fa-location-dot text-lg"></i>
+                  <span class="text-sm">Jakarta Pusat</span>
+                </div>
+              </div>
+              <div class="flex flex-col flex-1 gap-3">
+                <h1 class="text-3xl font-semibold text-primary">
+                  Workshop Edukasi & Aksi Kurangi Sampah Plastik
+                </h1>
+                <p class="line-clamp-5">
+                  Melalui workshop kreatif, peserta diajak mengolah sampah
+                  plastik menjadi produk baru sekaligus memahami dampak plastik
+                  sekali pakai terhadap lingkungan perkotaan.
+                </p>
+              </div>
+              <div
+                class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              >
+                <i class="fa-solid fa-seedling text-lg"></i>
+                <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              </div>
+              <div class="flex items-center gap-x-2 text-primary">
+                <img
+                  src="assets/images/people/alex-suprun.webp"
+                  class="rounded-full w-8 h-8"
+                  alt="pfp"
+                />
+                <span class="text-sm">Siti Rahmawati</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                
+                <span>Lebih Lanjut</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex md:hidden justify-center mt-8">
+          <a
+            href="event.html"
+            class="fade-up group flex md:hidden relative border-2 border-white w-fit overflow-hidden rounded-full font-semibold items-center justify-center gap-3 md:px-6 md:py-4 px-6 py-3 text-primary bg-secondary transition-all duration-500"
+          >
+            <span
+              class="relative z-10 md:text-lg text-base group-hover:text-secondary"
+            >
+              Lihat Semua
+            </span>
+            <div
+              class="bg-primary group-hover:bg-secondary p-1 flex items-center rounded-full relative z-10 transition-colors duration-500"
+            >
+              <i
+                class="fa-solid fa-angle-right text-xl text-secondary group-hover:text-primary"
+              ></i>
+            </div>
+            <span
+              class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
+            ></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- faq -->
+    <section
+      id="faqs"
+      class="max-w-7xl mx-auto w-full flex md:flex-row flex-col justify-center py-24 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="flex flex-col w-full gap-4 md:mb-0 mb-12 fade-up">
+        <div class="flex gap-2">
+          <i class="fa-solid fa-leaf text-primary text-3xl"></i>
+          <span class="text-gray-text text-xl">Pertanyaan dan Jawaban</span>
+        </div>
+        <h1
+          class="text-primary md:text-5xl text-3xl font-bold max-w-xl leading-tight"
+        >
+          Pertanyaan yang Sering Diajukan
+        </h1>
+        <p class="text-gray-text md:text-lg text-base max-w-xl">
+          Berikut beberapa pertanyaan yang sering muncul tentang cara kerja
+          Naturia.
+        </p>
+      </div>
+      <div class="max-w-xl mx-auto space-y-4 fade-up" id="accordion">
+        <!-- Item -->
+        <div class="rounded-3xl overflow-hidden">
+          <button
+            class="accordion-header w-full flex justify-between items-center px-4 py-3 text-left font-semibold text-gray-800 bg-card transition"
+          >
+            <span class="md:text-xl text-lg transition-colors duration-200">
+              Apa itu Naturia?
+            </span>
+            <i
+              class="fa-solid fa-angle-down text-lg transition-transform duration-300"
+            ></i>
+          </button>
+          <div
+            class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+          >
+            <div class="px-4 py-3 bg-card text-gray-text font-medium text-lg">
+              Naturia adalah platform bank sampah digital yang menghubungkan masyarakat
+              dengan mitra daur ulang. Kamu bisa mengirim sampah dan langsung mendapat uang,
+              belanja di marketplace hijau, ikut kegiatan komunitas, dan
+              belajar lewat konten edukasi seputar lingkungan.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="rounded-3xl overflow-hidden">
+          <button
+            class="accordion-header w-full flex justify-between items-center px-4 py-3 text-left font-semibold text-gray-800 bg-card transition"
+          >
+            <span class="md:text-xl text-lg transition-colors duration-200">
+              Bagaimana cara mendapatkan uang dari Naturia?
+            </span>
+            <i
+              class="fa-solid fa-angle-down text-lg transition-transform duration-300"
+            ></i>
+          </button>
+          <div
+            class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+          >
+            <div class="px-4 py-3 bg-card text-gray-text font-medium text-lg">
+              Kamu bisa mendapatkan uang dengan:
+              <ul>
+                <li>
+                  Mengirim/deposit sampah ke mitra Naturia — langsung dapat saldo.
+                </li>
+                <li>Mengikuti event dan kegiatan relawan lingkungan.</li>
+                <li>Berpartisipasi dalam event komunitas.</li>
+                <li>
+                  Uang masuk ke saldo Rekening dan bisa ditarik ke rekening bank
+                  atau e-wallet kapan saja.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="rounded-3xl overflow-hidden">
+          <button
+            class="accordion-header w-full flex justify-between items-center px-4 py-3 text-left font-semibold text-gray-800 bg-card transition"
+          >
+            <span class="md:text-xl text-lg transition-colors duration-200">
+              Bagaimana cara menjadi relawan di Naturia?
+            </span>
+            <i
+              class="fa-solid fa-angle-down text-lg transition-transform duration-300"
+            ></i>
+          </button>
+          <div
+            class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+          >
+            <div class="px-4 py-3 bg-card text-gray-text font-medium text-lg">
+              Kamu bisa mendaftar sebagai relawan melalui halaman event di
+              website Naturia. Relawan berperan dalam mendukung event,
+              mengedukasi masyarakat, membantu proses pengumpulan sampah, dan
+              menjadi bagian dari kampanye lingkungan. Setiap kontribusi relawan
+              akan mendapat uang serta pengalaman langsung di lapangan.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="rounded-3xl overflow-hidden">
+          <button
+            class="accordion-header w-full flex justify-between items-center px-4 py-3 text-left font-semibold text-gray-800 bg-card transition"
+          >
+            <span class="md:text-xl text-lg transition-colors duration-200">
+              Apakah Naturia juga tempat belajar?
+            </span>
+            <i
+              class="fa-solid fa-angle-down text-lg transition-transform duration-300"
+            ></i>
+          </button>
+          <div
+            class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+          >
+            <div class="px-4 py-3 bg-card text-gray-text font-medium text-lg">
+              Ya. Naturia menyediakan artikel, kelas singkat, dan materi edukasi
+              tentang pengelolaan sampah dan cara hidup ramah lingkungan. Konten
+              dibuat sederhana dan praktis agar bisa langsung dipraktikkan dalam
+              kehidupan sehari-hari.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="rounded-3xl overflow-hidden">
+          <button
+            class="accordion-header w-full flex justify-between items-center px-4 py-3 text-left font-semibold text-gray-800 bg-card transition"
+          >
+            <span class="md:text-xl text-lg transition-colors duration-200">
+              Apakah Naturia layanan pengumpulan sampah?
+            </span>
+            <i
+              class="fa-solid fa-angle-down text-lg transition-transform duration-300"
+            ></i>
+          </button>
+          <div
+            class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+          >
+            <div class="px-4 py-3 bg-card text-gray-text font-medium text-lg">
+              Tidak. Naturia bukan jasa pengangkut sampah. Kami adalah platform
+              yang memudahkan pengelolaan sampah melalui mitra daur ulang,
+              sambil memberi nilai ekonomis lewat saldo, marketplace, edukasi, dan
+              kegiatan komunitas.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 px-4">
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <div class="flex flex-col items-center gap-3 sm:gap-4 mb-4">
+            <div class="flex items-center gap-2 sm:gap-3 fade-up">
+              <i
+                class="fa-solid fa-leaf text-primary text-xl sm:text-2xl lg:text-3xl font-medium"
+              ></i>
+              <span class="text-gray-text text-sm sm:text-base lg:text-lg">
+                Tim Kami
+              </span>
+            </div>
+
+            <h2
+              class="md:text-5xl text-3xl font-bold text-primary mb-0 fade-up"
+            >
+              Orang-Orang dibalik Naturia
+            </h2>
+          </div>
+
+          <p class="text-lg text-gray-text max-w-2xl mx-auto fade-up">
+            Tim inti Naturia yang berdedikasi untuk menciptakan masa depan yang
+            lebih hijau dan berkelanjutan
+          </p>
+        </div>
+
+        <!-- Team Grid -->
+        <div
+          class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 fade-up"
+        >
+          <!-- Team Member 1 -->
+          <div
+            class="bg-card rounded-xl overflow-hidden group cursor-pointer transition-all duration-300"
+          >
+            <div class="relative overflow-hidden h-80">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="assets/images/people/pfp1.webp"
+                alt="Team Member"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+              ></div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-primary mb-1">Made Widhiana</h3>
+              <p class="text-sm text-gray-text mb-2">Team Naturia</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div
+            class="bg-card rounded-xl overflow-hidden group cursor-pointer transition-all duration-300"
+          >
+            <div class="relative overflow-hidden h-80">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="assets/images/people/pfp2.webp"
+                alt="Team Member"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+              ></div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-primary mb-1">Reksa Dhinata</h3>
+              <p class="text-sm text-gray-text mb-2">Team Naturia</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div
+            class="bg-card rounded-xl overflow-hidden group cursor-pointer transition-all duration-300"
+          >
+            <div class="relative overflow-hidden h-80">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="assets/images/people/pfp4.webp"
+                alt="Team Member"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+              ></div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-primary mb-1">Ahmad Fauzi</h3>
+              <p class="text-sm text-gray-text mb-2">Team Naturia</p>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div
+            class="bg-card rounded-xl overflow-hidden group cursor-pointer transition-all duration-300"
+          >
+            <div class="relative overflow-hidden h-80">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="assets/images/people/pfp3.webp"
+                alt="Team Member"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
+              ></div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-primary mb-1">Dewi Lestari</h3>
+              <p class="text-sm text-gray-text mb-2">Team Naturia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section
+      class="min-h-dvh mx-auto w-full max-w-7xl flex md:flex-row flex-col gap-6 md:px-0 px-4 pb-12"
+    >
+      <!-- Left -->
+      <div class="flex flex-col gap-6">
+        <!-- Informasi Kontak -->
+        <div
+          class="w-full flex flex-col bg-card py-8 md:px-12 px-4 gap-6 rounded-xl fade-up"
+        >
+          <h1 class="font-bold text-3xl text-primary mb-2">Hubungi Kami</h1>
+          <p class="text-lg text-primary">
+            Kami siap membantu Anda dalam perjalanan menuju lingkungan yang
+            lebih bersih dan berkelanjutan. Jangan ragu untuk menghubungi kami!
+          </p>
+
+          <div class="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
+            <div
+              class="flex bg-primary text-white items-center gap-3 px-6 py-4 rounded-xl"
+            >
+              <i class="fa-solid fa-envelope text-secondary text-3xl"></i>
+              <div class="flex flex-col">
+                <p class="text-base font-semibold">Email</p>
+                <p class="text-sm text-white/80">info@naturia.org</p>
+              </div>
+            </div>
+
+            <div
+              class="flex bg-primary text-white items-center gap-3 px-6 py-4 rounded-xl"
+            >
+              <i class="fa-solid fa-phone text-secondary text-3xl"></i>
+              <div class="flex flex-col">
+                <p class="text-base font-semibold">Telepon</p>
+                <p class="text-sm text-white/80">+62-361-123-4567</p>
+              </div>
+            </div>
+
+            <div
+              class="flex bg-primary text-white items-center gap-3 px-6 py-4 rounded-xl"
+            >
+              <i class="fa-solid fa-location-dot text-secondary text-3xl"></i>
+              <div class="flex flex-col">
+                <p class="text-base font-semibold">Alamat</p>
+                <p class="text-sm text-white/80">Jl. Raya Ubud No. 88, Bali</p>
+              </div>
+            </div>
+
+            <div
+              class="flex bg-primary text-white items-center gap-3 px-6 py-4 rounded-xl"
+            >
+              <i class="fa-solid fa-clock text-secondary text-3xl"></i>
+              <div class="flex flex-col">
+                <p class="text-base font-semibold">Jam Operasional</p>
+                <p class="text-sm text-white/80">
+                  Senin - Jumat, 08:00 - 17:00
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Sosial -->
+        <div
+          class="w-full flex flex-col text-primary bg-card py-8 md:px-12 px-4 gap-6 rounded-xl fade-up"
+        >
+          <h1 class="font-bold text-3xl">Media Sosial</h1>
+          <p class="text-base text-primary/80">
+            Ikuti kami di media sosial untuk mendapatkan update terbaru tentang
+            program dan kegiatan kami!
+          </p>
+
+          <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
+            <a
+              href="https://instagram.com"
+              class="flex bg-primary w-full text-white items-center gap-3 px-6 py-4 rounded-xl transition"
+            >
+              <img class="w-10" src="assets/icons/ig.svg" alt="Instagram" />
+              <div class="flex flex-col">
+                <p class="text-lg font-semibold">Instagram</p>
+                <p class="text-sm text-white/80">@naturia.id</p>
+              </div>
+            </a>
+
+            <a
+              href="https://facebook.com"
+              class="flex bg-primary w-full text-white items-center gap-3 px-6 py-4 rounded-xl transition"
+            >
+              <img class="w-10" src="assets/icons/fb.svg" alt="Instagram" />
+              <div class="flex flex-col">
+                <p class="text-lg font-semibold">Facebook</p>
+                <p class="text-sm text-white/80">Naturia Indonesia</p>
+              </div>
+            </a>
+
+            <a
+              href="https://x.com"
+              class="flex bg-primary w-full text-white items-center gap-3 px-6 py-4 rounded-xl transition"
+            >
+              <img class="w-10" src="assets/icons/x.svg" alt="Instagram" />
+              <div class="flex flex-col">
+                <p class="text-lg font-semibold">X / Twitter</p>
+                <p class="text-sm text-white/80">@naturia_id</p>
+              </div>
+            </a>
+
+            <a
+              href="https://wa.me/621234567890"
+              class="flex bg-primary w-full text-white items-center gap-3 px-6 py-4 rounded-xl transition"
+            >
+              <img class="w-10" src="assets/icons/wa.svg" alt="Instagram" />
+              <div class="flex flex-col">
+                <p class="text-lg font-semibold">WhatsApp</p>
+                <p class="text-sm text-white/80">+62-812-3456-7890</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="md:w-1/2 w-full">
+        <div
+          class="md:sticky relative top-5 flex flex-col text-primary space-y-6 fade-up"
+        >
+          <!-- Form Kontak -->
+          <div class="flex flex-col bg-card rounded-xl px-6 py-8 space-y-4">
+            <h1 class="font-bold text-2xl">Kirim Pesan</h1>
+            <p class="text-sm text-primary/80 mb-2">
+              Isi formulir di bawah ini dan kami akan segera menghubungi Anda
+              kembali.
+            </p>
+
+            <form class="flex flex-col space-y-4">
+              <div class="flex flex-col space-y-2">
+                <label for="name" class="text-sm font-semibold text-primary">
+                  Nama Lengkap
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  class="px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary focus:outline-none transition"
+                  placeholder="Masukkan nama lengkap"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label for="email" class="text-sm font-semibold text-primary">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  class="px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary focus:outline-none transition"
+                  placeholder="nama@email.com"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label for="phone" class="text-sm font-semibold text-primary">
+                  Nomor Telepon
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary focus:outline-none transition"
+                  placeholder="+62-xxx-xxxx-xxxx"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label for="subject" class="text-sm font-semibold text-primary">
+                  Subjek
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary focus:outline-none transition"
+                  placeholder="Topik pesan Anda"
+                />
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <label for="message" class="text-sm font-semibold text-primary">
+                  Pesan
+                </label>
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary focus:outline-none transition resize-none"
+                  placeholder="Tulis pesan Anda di sini..."
+                ></textarea>
+              </div>
+
+              <button
+                onclick="alert('Data berhasil terkirim!')"
+                type="submit"
+                class="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                
+                <span>Kirim Pesan</span>
+                <i
+                  class="fa-solid fa-paper-plane text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
+                ></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background: url('assets/images/footer-bg.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+      class="relative text-white mt-20"
+    >
+      <div class="absolute inset-0 bg-primary -z-1"></div>
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Main Footer Content -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/20"
+        >
+          <!-- About Section -->
+          <div class="flex flex-col space-y-4">
+            <div class="flex items-center gap-1">
+              
+              <h3 class="text-4xl font-bold text-white">Naturia</h3>
+            </div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Platform inovatif untuk mengelola sampah plastik dan menciptakan
+              lingkungan yang lebih bersih dan berkelanjutan untuk generasi
+              mendatang.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="flex flex-col space-y-4">
+            <h4 class="text-lg font-bold">Tautan Cepat</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Beranda</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="event.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Event</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="pickup.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Kirim Sampah</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="marketplace.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Marketplace</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="edukasi.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Edukasi</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="flex flex-col space-y-4">
+            <h4 class="text-lg font-bold">Layanan</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="pickup.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Pickup Sampah</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="edukasi.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Edukasi Lingkungan</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="event.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Program Event</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="marketplace.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Marketplace Hijau</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="index.html#faqs"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>FAQ</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="flex flex-col space-y-4">
+            <h4 class="text-lg font-bold">Hubungi Kami</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm">
+                <i class="fa-solid fa-location-dot text-secondary text-xl"></i>
+                <span class="text-white/80">
+                  Jl. Raya Ubud No. 88 Bali, Indonesia 80571
+                </span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-phone text-secondary text-xl"></i>
+                <span class="text-white/80">+62-361-123-4567</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-envelope text-secondary text-xl"></i>
+                <span class="text-white/80">info@naturia.org</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-calendar-days text-secondary text-xl"></i>
+                <span class="text-white/80">
+                  Senin - Jumat
+                  <br />
+                  08:00 - 17:00 WITA
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="pt-8 flex justify-center gap-4">
+          <p class="text-white/60 text-sm text-center md:text-left">
+            &copy; 2025 Naturia. Semua hak dilindungi undang-undang.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

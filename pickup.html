@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirim Sampah</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/globals.css" />
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="libs/fontawesome-free-7.1.0-web/css/all.min.css" />
+
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/preloader.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/imageinput.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+        <header class="w-full relative z-50 bg-white transition-all">
+      <div class="max-w-7xl mx-auto w-full flex md:justify-normal justify-between items-center gap-x-12 lg:gap-x-24 md:px-0 px-4 py-4">
+        <!-- Logo -->
+        <a class="flex gap-2 items-center" href="index.html">
+          <img class="h-12 w-12 bg-white p-1 rounded-full object-contain" src="assets/icons/logo-green.webp" alt="logo" />
+          <span class="font-bold text-xl md:text-2xl text-primary">Naturia</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex justify-between items-center w-full gap-8">
+          <ul class="flex gap-2 items-center">
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="index.html">Beranda</a></li>
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="event.html">Event</a></li>
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="edukasi.html">Edukasi</a></li>
+            <li><a class="font-bold text-primary bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="pickup.html">Kirim Sampah</a></li>
+            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="marketplace.html">Marketplace</a></li>
+          </ul>
+
+          <!-- Profile -->
+          <div class="relative">
+            <button id="profileBtn" class="flex cursor-pointer items-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-primary px-4 py-2 rounded-full duration-200">
+              <img class="rounded-full w-8 h-8" src="assets/images/people/pfp.webp" alt="pfp" />
+              <i class="fa-solid fa-angle-down text-lg text-primary transition-transform duration-200" id="profileArrow"></i>
+            </button>
+            <!-- Profile Popup -->
+            <div id="profilePopup" class="absolute right-0 top-18 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-[100]">
+              <div class="px-4 py-3 border-b border-gray-100">
+                <p class="font-bold text-primary">Jane Doe</p>
+                <p class="text-sm text-gray-500">janedoe@naturia.com</p>
+              </div>
+              <a href="profile.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors duration-150 cursor-pointer">
+                <i class="fa-solid fa-user text-primary text-lg w-5 text-center"></i>
+                <span class="text-gray-700 font-medium">Profile</span>
+              </a>
+              <button class="flex items-center gap-3 w-full px-4 py-3 hover:bg-red-50 transition-colors duration-150 text-left">
+                <i class="fa-solid fa-door-open text-red-500 text-lg w-5 text-center"></i>
+                <span class="text-red-600 font-medium">Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 relative z-[55]">
+          <i class="fa-solid fa-bars text-2xl transition-all duration-300" id="hamburgerIcon"></i>
+          <i class="fa-solid fa-xmark text-2xl absolute transition-all duration-300 opacity-0 scale-0" id="closeIcon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 z-[9999] bg-white transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-between"
+    >
+      <!-- Close Button -->
+      <div class="absolute top-6 right-6">
+        <button
+          id="closeMobileMenu"
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+        >
+          <i class="fa-solid fa-xmark text-2xl text-gray-700"></i>
+        </button>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center flex-1 px-6 text-center space-y-10"
+      >
+        <a
+          href="index.html"
+          class="text-3xl font-semibold transition-colors duration-200"
+        >
+          Beranda
+        </a>
+        <a
+          href="event.html"
+          class="text-3xl font-semibold transition-colors duration-200"
+        >
+          Event
+        </a>
+        <a
+          href="edukasi.html"
+          class="text-3xl font-semibold transition-colors duration-200"
+        >
+          Event
+        </a>
+        <a
+          href="pickup.html"
+          class="text-3xl font-semibold transition-colors duration-200"
+        >
+          Kirim Sampah
+        </a>
+        <a
+          href="marketplace.html"
+          class="text-3xl font-semibold transition-colors duration-200"
+        >
+          Marketplace
+        </a>
+      </div>
+
+      <div class="border-t border-gray-200 px-6 py-6 bg-gray-50">
+        <div class="flex items-center gap-4">
+          <!-- Profile Picture -->
+          <img
+            class="rounded-full w-14 h-14"
+            src="assets/images/people/pfp.webp"
+            alt=""
+          />
+
+          <div class="flex flex-col gap-0">
+            <span class="font-semibold text-gray-800">Jane Doe</span>
+            <span class="text-sm text-gray-500">janedoe@naturia.com</span>
+            <!-- Poin -->
+            <span class="text-sm font-medium text-primary">Saldo: Rp 245.000</span>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-6 mt-4">
+          <a
+            href="profile.html"
+            class="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200"
+          >
+            <i class="fa-solid fa-user text-lg"></i>
+            <span>Profile</span>
+          </a>
+          <button
+            class="flex cursor-pointer items-center gap-2 text-sm text-red-500 hover:text-red-600 transition-colors duration-200"
+          >
+            <i class="fa-solid fa-door-open text-red-500 text-lg"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb -->
+    <div
+      class="flex w-full items-center justify-center my-6 md:px-0 px-4 fade-up"
+    >
+      <nav class="text-primary md:text-base text-sm max-w-7xl w-full">
+        <ul class="flex items-center space-x-2">
+          <li>
+            <a
+              href="/"
+              class="flex items-center gap-1 text-gray-text hover:text-primary transition"
+            >
+              <i class="fa-solid fa-house"></i>
+              <span>Beranda</span>
+            </a>
+          </li>
+          <li><span class="text-gray-text">/</span></li>
+          <li>
+            <a
+              href="pickup.html"
+              class="flex items-center gap-1 hover:text-primary transition font-semibold"
+            >
+              <i class="fa-solid fa-trash"></i>
+              <span>Kirim Sampah</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <section class="min-h-dvh w-full flex px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
+      <div
+        class="mx-auto max-w-7xl w-full flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-8 lg:gap-12"
+      >
+        <!-- Image Container -->
+        <div
+          class="flex w-full lg:w-1/2 h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] order-2 lg:order-1 justify-center items-center fade-up"
+        >
+          <div class="w-full h-full max-w-lg">
+            <img
+              class="w-full h-full object-contain"
+              src="assets/images/pickup.png"
+              alt="Pickup"
+            />
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-4 sm:gap-6 w-full lg:w-1/2 order-1 lg:order-2"
+        >
+          <div class="flex items-center gap-3 fade-up">
+            <i
+              class="fa-solid fa-leaf text-primary text-2xl sm:text-3xl font-medium"
+            ></i>
+            <span class="text-gray-text text-base sm:text-lg">
+              Pickup Sampah
+            </span>
+          </div>
+
+          <h1
+            class="text-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-3xl font-bold fade-up"
+          >
+            Kirim Foto, Pilih Kurir, Sampahmu Dijemput!
+          </h1>
+          <p class="text-gray-text text-sm sm:text-base fade-up">
+            Dengan satu langkah kecil, kamu membantu menjaga kebersihan
+            lingkungan dan masa depan bumi.
+          </p>
+          <form class="flex flex-col gap-5 fade-up">
+            <input
+              class="bg-card px-6 py-4 rounded-xl text-lg placeholder:text-gray-text text-primary"
+              placeholder="Alamat"
+              type="text"
+              required
+            />
+            <div class="bg-card p-6 rounded-2xl w-full text-center">
+              <h2 class="text-lg font-semibold text-primary mb-4">
+                Upload Gambar Sampah
+              </h2>
+
+              <input
+                type="file"
+                id="imageUpload"
+                accept="image/*"
+                class="block w-full text-sm text-gray-text file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white duration-500 transition-all cursor-pointer mb-4"
+              />
+
+              <div id="previewContainer" class="hidden flex flex-col items-center">
+                <style>
+                  @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
+                  .animate-scan { animation: scan 2s linear infinite alternate; }
+                </style>
+                <div class="relative rounded-xl overflow-hidden inline-block mb-4">
+                  <img
+                    id="previewImage"
+                    src=""
+                    alt="Preview"
+                    class="rounded-xl max-h-60 mx-auto block"
+                  />
+                  <!-- Scanner overlay -->
+                  <div id="scannerOverlay" class="absolute inset-0 bg-primary/40 flex flex-col items-center justify-center backdrop-blur-[2px] z-10 hidden">
+                    <i class="fa-solid fa-expand text-white text-4xl animate-pulse mb-2"></i>
+                    <p class="text-white font-semibold text-sm animate-pulse">AI Sedang Menganalisis...</p>
+                    <div class="w-full h-1 bg-green-400 absolute top-0 left-0 animate-scan shadow-[0_0_15px_#4ADE80]"></div>
+                  </div>
+                </div>
+
+                <!-- AI Result Card -->
+                <div id="aiResultCard" class="bg-primary/5 rounded-xl border border-primary/20 p-4 w-full max-w-sm hidden mt-2">
+                  <h3 class="text-primary font-bold text-sm mb-3 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-robot"></i> Hasil Analisis AI
+                  </h3>
+                  <div class="space-y-2 text-sm text-left">
+                    <div class="flex justify-between items-center bg-white p-2 text-primary rounded-lg border border-primary/10">
+                      <span class="font-medium">Kategori</span>
+                      <span id="aiCategory" class="font-bold">Plastik & Kertas</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-white p-2 text-primary rounded-lg border border-primary/10">
+                      <span class="font-medium">Persentase</span>
+                      <span id="aiComposition" class="font-bold text-xs">80% Plastik, 20% Kertas</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-white p-2 text-primary rounded-lg border border-primary/10">
+                      <span class="font-medium">Estimasi Harga</span>
+                      <span id="aiPrice" class="font-bold text-green-600">Rp 15.000</span>
+                    </div>
+                  </div>
+                </div>
+                <p id="previewText" class="mt-2 text-sm text-gray-text">Preview Gambar</p>
+              </div>
+            </div>
+            <div class="relative">
+              <select
+                class="appearance-none bg-card px-6 py-4 rounded-xl text-lg placeholder:text-gray-text text-primary w-full"
+                name="kurir"
+                id="kurir"
+                required
+              >
+                <option value="">-- Pilih Kurir --</option>
+                <option value="jne">JNE</option>
+                <option value="jnt">JNT</option>
+                <option value="gojek">Gojek</option>
+                <option value="sicepat">SiCepat</option>
+              </select>
+              <i
+                class="fa-solid fa-angle-down text-primary absolute right-5 top-4 text-3xl"
+              ></i>
+            </div>
+            <button
+              id="openModal"
+              type="button"
+              class="fade-up group relative border-2 border-white w-fit overflow-hidden rounded-full font-semibold flex items-center justify-center gap-3 md:px-6 md:py-4 px-4 py-3 text-primary bg-secondary transition-all duration-500"
+            >
+              <span class="relative z-10 text-lg group-hover:text-secondary">
+                Pickup Sampah
+              </span>
+              <div
+                class="bg-primary group-hover:bg-secondary p-1 flex items-center rounded-full relative z-10 transition-colors duration-500"
+              >
+                <i
+                  class="fa-solid fa-angle-right text-xl text-secondary group-hover:text-primary"
+                ></i>
+              </div>
+              <span
+                class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
+              ></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      id="popupModal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto"
+    >
+      <div
+        class="relative w-full max-w-4xl my-auto transform overflow-hidden rounded-3xl bg-white transition-all"
+      >
+        <!-- Close Button -->
+        <button
+          id="closeModal"
+          class="absolute right-4 top-4 z-10 rounded-full backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
+        >
+          <i class="fa-solid fa-xmark text-2xl md:text-primary text-white"></i>
+        </button>
+
+        <div class="flex flex-col md:flex-row">
+          <div
+            class="relative md:w-1/2 bg-gradient-to-br from-primary to-primary/80 p-8 md:p-12 text-white"
+          >
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+              <div
+                class="mx-auto md:mx-0 mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm"
+              >
+                <i class="fa-solid fa-circle-check text-4xl"></i>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold">
+                Berhasil Memproses!
+              </h2>
+              <p class="mt-2 text-white/80">
+                Pickup sampah Anda telah terjadwal
+              </p>
+            </div>
+
+            <div class="hidden md:block mt-8 space-y-4">
+              <div class="space-y-3">
+                <div class="flex items-center gap-3 text-white/90">
+                  <i class="fa-solid fa-truck text-xl"></i>
+                  <span class="text-sm">Kurir profesional dan terpercaya</span>
+                </div>
+                <div class="flex items-center gap-3 text-white/90">
+                  <i class="fa-solid fa-clock text-xl"></i>
+                  <span class="text-sm">Pickup tepat waktu</span>
+                </div>
+                <div class="flex items-center gap-3 text-white/90">
+                  <i class="fa-solid fa-leaf text-xl"></i>
+                  <span class="text-sm">
+                    Kontribusi untuk lingkungan lebih baik
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex-1 p-6 md:p-8 max-h-[90vh] md:max-h-full overflow-y-auto"
+          >
+            <div class="mb-6">
+              <h3 class="mb-4 font-semibold text-primary text-lg">
+                Detail Pickup
+              </h3>
+              <div class="space-y-3 rounded-2xl bg-card p-5">
+                <div class="flex items-start gap-3">
+                  <i class="fa-solid fa-location-dot text-primary text-xl mt-0.5"></i>
+                  <div class="flex-1">
+                    <p class="text-sm text-gray-600 mb-1">Alamat Pickup</p>
+                    <p class="font-medium text-primary">
+                      Jl. Melati Raya No. 45, Jakarta Pusat
+                    </p>
+                  </div>
+                </div>
+
+                <div class="border-t pt-3">
+                  <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-truck text-primary text-xl mt-0.5"></i>
+                    <div class="flex-1">
+                      <p class="text-sm text-gray-600 mb-1">Kurir</p>
+                      <p class="font-medium text-primary">JNE Express</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-t pt-3">
+                  <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-clock text-primary text-xl mt-0.5"></i>
+                    <div class="flex-1">
+                      <p class="text-sm text-gray-600 mb-1">
+                        Estimasi Kedatangan
+                      </p>
+                      <p class="font-medium text-primary">10-20 menit</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="border-t pt-3">
+                  <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-dollar-sign text-primary text-xl mt-0.5"></i>
+                    <div class="flex-1">
+                      <p class="text-sm text-gray-600 mb-1">Biaya Ongkir</p>
+                      <p class="font-medium text-primary">Rp.5.000,00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <h3 class="mb-4 font-semibold text-primary text-lg">
+                Pendapatan Anda
+              </h3>
+              <div class="rounded-2xl bg-secondary/20 p-5">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary"
+                    >
+                      <i class="fa-solid fa-wallet text-primary text-2xl"></i>
+                    </div>
+                    <div>
+                      <p class="text-sm text-gray-600">
+                        Estimasi pendapatan
+                      </p>
+                      <p class="text-2xl font-bold text-primary">+Rp 5.000</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mb-6 rounded-2xl border-2 border-primary/20 bg-primary/5 p-4"
+            >
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-primary text-xl mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-primary mb-2">
+                    Mohon Diperhatikan:
+                  </p>
+                  <ul class="space-y-1 list-disc text-sm text-gray-600">
+                    <li>Pastikan sampah sudah dipilah dengan benar</li>
+                    <li>Siapkan sampah di lokasi yang mudah dijangkau</li>
+                    <li>Kurir akan menghubungi Anda saat tiba</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button
+                id="closeModal"
+                class="group relative flex-1 border-2 border-primary overflow-hidden rounded-full bg-none py-3 font-semibold text-primary transition-all hover:text-white duration-500 active:scale-95 order-2 sm:order-1"
+              >
+                <span
+                  class="relative z-10 flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-left text-lg"></i>
+                  Kembali
+                </span>
+                <span
+                  class="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0"
+                ></span>
+              </button>
+            </div>
+
+            <div
+              class="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500"
+            >
+              <i class="fa-solid fa-phone text-lg"></i>
+              <span>Butuh bantuan? Hubungi: +62-361-123-4567</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section
+      class="min-h-dvh w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-8 pb-12 sm:pb-20 mt-12"
+    >
+      <div class="mx-auto max-w-7xl w-full">
+        <!-- Header -->
+        <div
+          class="flex flex-col items-center gap-3 sm:gap-4 mb-8 sm:mb-12 fade-up"
+        >
+          <div class="flex items-center gap-2 sm:gap-3">
+            <i
+              class="fa-solid fa-leaf text-primary text-xl sm:text-2xl lg:text-3xl font-medium"
+            ></i>
+            <span class="text-gray-text text-sm sm:text-base lg:text-lg">
+              Dropoff Sampah
+            </span>
+          </div>
+
+          <h1
+            class="text-primary text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+          >
+            Lokasi Drop Point Terdekat
+          </h1>
+
+          <p class="text-gray-text text-sm sm:text-base lg:text-lg max-w-2xl">
+            Temukan lokasi terdekat untuk mengantar sampah Anda
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
+        >
+          <!-- Card 1 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Melati
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      2.3 km
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Melati Raya No. 45, Gambir, Jakarta Pusat
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  08:00 - 17:00 (Sen–Sab)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Plastik, Kertas, Logam, Kaca
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Sejahtera
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      4.8 km
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Sukajadi No. 120, Bandung
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  09:00 - 16:00 (Sen–Jum)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Plastik, Kertas, Tekstil, Logam
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Bahari
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      1.1 km
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Taman Bungkul No. 7, Surabaya
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  07:30 - 15:30 (Sen–Sab)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Kertas, Kaca, Plastik, Elektronik kecil
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Lestari
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      600 m
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Malioboro No. 88, Yogyakarta
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  09:00 - 18:00 (Sen–Ming)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Plastik, Kertas, Organik Kompos
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Hijau
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      3.6 km
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Sisingamangaraja No. 10, Medan
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  08:00 - 16:00 (Sen–Sab)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Plastik, Botol PET, Logam, Karet
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Nusantara
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      700 m
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Raya Kuta No. 22, Denpasar, Bali
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  10:00 - 18:00 (Sel–Ming)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Kaca, Plastik, Kertas, Limbah Pantai
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Berseri
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      5.0 km
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Sultan Alauddin No. 3, Makassar
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  08:30 - 16:30 (Sen–Sab)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Plastik, Kertas, Oli bekas (terbatas)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Cendana
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      2.0 km
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Komplek Cendana, Bekasi Selatan
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  09:00 - 17:00 (Sen–Sab)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Plastik, Kertas, Logam, Botol kaca
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div
+            class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
+          >
+            <div class="flex items-start justify-between gap-3 mb-3 sm:mb-4">
+              <div class="flex items-start gap-2 sm:gap-3 flex-1">
+                <div class="flex-1 min-w-0">
+                  <h3
+                    class="text-primary text-base sm:text-lg lg:text-xl font-bold mb-1 leading-tight"
+                  >
+                    Bank Sampah Pelangi
+                  </h3>
+                  <div
+                    class="bg-secondary px-2 sm:px-3 py-0.5 sm:py-1 rounded-full inline-block"
+                  >
+                    <span class="text-primary font-semibold text-xs sm:text-sm">
+                      3.2 km
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2 sm:space-y-2.5">
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-location-dot text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Jl. Pemuda No. 50, Semarang
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-clock text-primary text-base sm:text-lg flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm">
+                  08:00 - 15:00 (Sen–Jum)
+                </p>
+              </div>
+              <div class="flex items-start gap-2">
+                <i
+                  class="fa-solid fa-box text-primary text-base sm:text-lg mt-0.5 flex-shrink-0"
+                ></i>
+                <p class="text-gray-text text-xs sm:text-sm leading-relaxed">
+                  Plastik, Kertas, Kaca, Komponen elektronik
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <iframe
+          class="mt-12 fade-up"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.123!2d115.1889!3d-8.4095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23abcdef12345%3A0x123456abcdef!2sDenpasar%2C%20Bali!5e0!3m2!1sid!2sid!4v1700000000001"
+          width="100%"
+          height="400"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      style="
+        background: url('assets/images/footer-bg.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+      class="relative text-white mt-20"
+    >
+      <div class="absolute inset-0 bg-primary -z-1"></div>
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/20"
+        >
+          <div class="flex flex-col space-y-4">
+            <div class="flex items-center gap-1">
+              
+              <h3 class="text-4xl font-bold text-white">Naturia</h3>
+            </div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Platform inovatif untuk mengelola sampah plastik dan menciptakan
+              lingkungan yang lebih bersih dan berkelanjutan untuk generasi
+              mendatang.
+            </p>
+          </div>
+
+          <div class="flex flex-col space-y-4">
+            <h4 class="text-lg font-bold">Tautan Cepat</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Beranda</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="event.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Event</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="pickup.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Kirim Sampah</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="marketplace.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Marketplace</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="edukasi.html"
+                  class="group text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Edukasi</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col space-y-4">
+            <h4 class="text-lg font-bold">Layanan</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="pickup.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Pickup Sampah</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="edukasi.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Edukasi Lingkungan</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="event.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Program Event</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="marketplace.html"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>Marketplace Hijau</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="index.html#faqs"
+                  class="text-white/80 hover:text-secondary transition text-sm flex items-center gap-2"
+                >
+                  <i class="fa-solid fa-angle-right text-[10px]"></i>
+                  <span>FAQ</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col space-y-4">
+            <h4 class="text-lg font-bold">Hubungi Kami</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm">
+                <i class="fa-solid fa-location-dot text-secondary text-xl"></i>
+                <span class="text-white/80">
+                  Jl. Raya Ubud No. 88 Bali, Indonesia 80571
+                </span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-phone text-secondary text-xl"></i>
+                <span class="text-white/80">+62-361-123-4567</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-envelope text-secondary text-xl"></i>
+                <span class="text-white/80">info@naturia.org</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <i class="fa-solid fa-calendar-days text-secondary text-xl"></i>
+                <span class="text-white/80">
+                  Senin - Jumat
+                  <br />
+                  08:00 - 17:00 WITA
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 flex justify-center gap-4">
+          <p class="text-white/60 text-sm text-center md:text-left">
+            &copy; 2025 Naturia. Semua hak dilindungi undang-undang.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
