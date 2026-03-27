@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,75 +7,150 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/globals.css" />
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- favicon -->
+    <!-- Favikon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Icons (Font Awesome) -->
-    <link rel="stylesheet" href="libs/fontawesome-free-7.1.0-web/css/all.min.css" />
+    <!-- Ikon (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="libs/fontawesome-free-7.1.0-web/css/all.min.css"
+    />
 
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/animation.js"></script>
   </head>
   <body>
-    <!-- Header -->
-        <header class="w-full relative z-50 bg-white transition-all">
-      <div class="max-w-7xl mx-auto w-full flex md:justify-normal justify-between items-center gap-x-12 lg:gap-x-24 md:px-0 px-4 py-4">
+    <!-- Bagian Kepala (Header) -->
+    <header class="w-full relative z-50 bg-white transition-all">
+      <div
+        class="max-w-7xl mx-auto w-full flex md:justify-normal justify-between items-center gap-x-12 lg:gap-x-24 md:px-0 px-4 py-4"
+      >
         <!-- Logo -->
         <a class="flex gap-2 items-center" href="index.html">
-          <img class="h-12 w-12 bg-white p-1 rounded-full object-contain" src="assets/icons/logo-green.webp" alt="logo" />
+          <img
+            class="h-12 w-12 bg-white p-1 rounded-full object-contain"
+            src="assets/icons/logo.png"
+            alt="logo"
+          />
           <span class="font-bold text-xl md:text-2xl text-primary">Natura</span>
         </a>
 
-        <!-- Desktop Menu -->
+        <!-- Menu Desktop -->
         <div class="hidden md:flex justify-between items-center w-full gap-8">
           <ul class="flex gap-2 items-center">
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="index.html">Beranda</a></li>
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="event.html">Event</a></li>
-            <li><a class="font-bold text-primary bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="edukasi.html">Edukasi</a></li>
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="pickup.html">Kirim Sampah</a></li>
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="marketplace.html">Marketplace</a></li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="index.html"
+              >
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="event.html"
+              >
+                Event
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-bold text-primary bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="edukasi.html"
+              >
+                Edukasi
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="pickup.html"
+              >
+                Kirim Sampah
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="marketplace.html"
+              >
+                Marketplace
+              </a>
+            </li>
           </ul>
 
-          <!-- Profile -->
+          <!-- Profil -->
           <div class="relative">
-            <button id="profileBtn" class="flex cursor-pointer items-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-primary px-4 py-2 rounded-full duration-200">
-              <img class="rounded-full w-8 h-8" src="assets/images/people/pfp.webp" alt="pfp" />
-              <i class="fa-solid fa-angle-down text-lg text-primary transition-transform duration-200" id="profileArrow"></i>
+            <button
+              id="profileBtn"
+              class="flex cursor-pointer items-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-primary px-4 py-2 rounded-full duration-200"
+            >
+              <img
+                class="rounded-full w-8 h-8"
+                src="assets/images/people/pfp.webp"
+                alt="pfp"
+              />
+              <i
+                class="fa-solid fa-angle-down text-lg text-primary transition-transform duration-200"
+                id="profileArrow"
+              ></i>
             </button>
-            <!-- Profile Popup -->
-            <div id="profilePopup" class="absolute right-0 top-18 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-[100]">
+            <!-- Popup Profil -->
+            <div
+              id="profilePopup"
+              class="absolute right-0 top-18 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-[100]"
+            >
               <div class="px-4 py-3 border-b border-gray-100">
                 <p class="font-bold text-primary">Jane Doe</p>
                 <p class="text-sm text-gray-500">janedoe@natura.com</p>
               </div>
-              <a href="profile.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors duration-150 cursor-pointer">
-                <i class="fa-solid fa-user text-primary text-lg w-5 text-center"></i>
+              <a
+                href="profile.html"
+                class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors duration-150 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-user text-primary text-lg w-5 text-center"
+                ></i>
                 <span class="text-gray-700 font-medium">Profile</span>
               </a>
-              <button class="flex items-center gap-3 w-full px-4 py-3 hover:bg-red-50 transition-colors duration-150 text-left">
-                <i class="fa-solid fa-door-open text-red-500 text-lg w-5 text-center"></i>
+              <button
+                class="flex items-center gap-3 w-full px-4 py-3 hover:bg-red-50 transition-colors duration-150 text-left"
+              >
+                <i
+                  class="fa-solid fa-door-open text-red-500 text-lg w-5 text-center"
+                ></i>
                 <span class="text-red-600 font-medium">Logout</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="md:hidden cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 relative z-[55]">
-          <i class="fa-solid fa-bars text-2xl transition-all duration-300" id="hamburgerIcon"></i>
-          <i class="fa-solid fa-xmark text-2xl absolute transition-all duration-300 opacity-0 scale-0" id="closeIcon"></i>
+        <!-- Tombol Menu Mobile -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 relative z-[55]"
+        >
+          <i
+            class="fa-solid fa-bars text-2xl transition-all duration-300"
+            id="hamburgerIcon"
+          ></i>
+          <i
+            class="fa-solid fa-xmark text-2xl absolute transition-all duration-300 opacity-0 scale-0"
+            id="closeIcon"
+          ></i>
         </button>
       </div>
     </header>
 
-    <!-- Mobile Menu -->
+    <!-- Menu Mobile -->
     <div
       id="mobileMenu"
       class="fixed inset-0 z-[9999] bg-white transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-between"
     >
-      <!-- Close Button -->
+      <!-- Tombol Tutup -->
       <div class="absolute top-6 right-6">
         <button
           id="closeMobileMenu"
@@ -122,7 +197,7 @@
 
       <div class="border-t border-gray-200 px-6 py-6 bg-gray-50">
         <div class="flex items-center gap-4">
-          <!-- Profile Picture -->
+          <!-- Foto Profil -->
           <img
             class="rounded-full w-14 h-14"
             src="assets/images/people/pfp.webp"
@@ -133,7 +208,9 @@
             <span class="font-semibold text-gray-800">Jane Doe</span>
             <span class="text-sm text-gray-500">janedoe@natura.com</span>
             <!-- Poin -->
-            <span class="text-sm font-medium text-primary">Saldo: Rp 245.000</span>
+            <span class="text-sm font-medium text-primary">
+              Saldo: Rp 245.000
+            </span>
           </div>
         </div>
 
@@ -155,7 +232,7 @@
       </div>
     </div>
 
-    <!-- Breadcrumb -->
+    <!-- Navigasi Breadcrumb -->
     <div
       class="flex w-full items-center justify-center my-6 md:px-0 px-4 fade-up"
     >
@@ -193,7 +270,7 @@
             <div class="relative flex-1">
               <input
                 class="w-full py-4 px-16 bg-card rounded-2xl placeholder:text-gray-text outline-none text-primary"
-                placeholder="Cari artikel edukasi..."
+                placeholder="Temukan artikel edukasi..."
                 type="search"
                 name="search"
                 id="search"
@@ -224,49 +301,50 @@
         </div>
       </div>
 
-      <div
-        class="mx-auto w-full max-w-7xl grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
-      >
-        <!-- 1 - Tips Harian -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+      <div class="mx-auto w-full max-w-7xl flex flex-col gap-6">
+        <!-- Artikel 1 - Tips Harian -->
+        <div
+          class="flex md:flex-row flex-col rounded-xl bg-card group fade-up overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
-              src="assets/images/pantai-bali-2.webp"
+              src="assets/images/pantai-bali.jpeg"
               alt="tips-reduce-plastic"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-book-bookmark text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-book-bookmark text-sm"></i>
                 <span class="text-sm">Tips Harian</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-clock text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-clock text-sm"></i>
                 <span class="text-sm">5 menit baca</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                5 Cara Kurangi Sampah Plastik di Rumah
+                5 Langkah Tekan Penggunaan Plastik di Rumah
               </h1>
               <p class="line-clamp-5">
                 Mulai dari membawa botol minum sendiri hingga membuat eco-brick,
-                berikut langkah mudah yang bisa kamu lakukan setiap hari.
-                Perubahan kecil dari kebiasaan sehari-hari dapat memberikan
+                berikut langkah praktis yang bisa kamu terapkan setiap hari.
+                Perubahan kecil dari rutinitas harian ternyata mampu memberikan
                 dampak besar bagi lingkungan. Ganti sedotan plastik dengan
                 sedotan stainless, bawa tas belanja kain, gunakan wadah makanan
-                yang bisa dipakai ulang, dan pilih produk dengan kemasan
-                minimal. Langkah-langkah sederhana ini tidak hanya mengurangi
-                sampah plastik tetapi juga menghemat pengeluaran jangka panjang.
+                yang bisa dipakai berkali-kali, dan pilih produk dengan kemasan
+                minim. Langkah-langkah sederhana ini bukan hanya mengurangi
+                sampah plastik tapi juga menghemat pengeluaran dalam jangka
+                panjang.
               </p>
             </div>
             <div
@@ -275,29 +353,38 @@
               <i class="fa-solid fa-eye text-lg"></i>
               <span class="text-sm">1.2k Pembaca</span>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/pfp.webp"
-                class="rounded-full w-8 h-8"
-                alt="author"
-              />
-              <span class="text-sm">Tim Natura</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <span>Baca Artikel</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/pfp.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Tim Natura</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Baca Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 2 - DIY -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <!-- Artikel 2 - DIY -->
+        <div
+          class="flex md:flex-row flex-col rounded-xl bg-card group fade-up overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
               src="assets/images/diy.webp"
@@ -307,34 +394,32 @@
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-paintbrush text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-paintbrush text-sm"></i>
                 <span class="text-sm">DIY</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-clock text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-clock text-sm"></i>
                 <span class="text-sm">8 menit baca</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Ubah Botol Plastik Jadi Pot Tanaman
+                Sulap Botol Plastik Menjadi Pot Tanaman
               </h1>
               <p class="line-clamp-5">
-                Jangan buang botol plastik bekasmu. Dengan sedikit kreativitas,
-                kamu bisa ubah jadi pot cantik untuk tanaman hias. Tutorial
-                lengkap ini akan membimbingmu dari persiapan alat dan bahan,
-                teknik pemotongan yang aman, hingga tips mendekorasi pot agar
-                tampak menarik. Kamu juga bisa menambahkan sistem drainase
-                sederhana dan memilih tanaman yang cocok untuk pot daur ulang.
-                Proyek DIY ini sempurna untuk pemula dan dapat dilakukan bersama
-                keluarga di akhir pekan.
+                Jangan buru-buru buang botol plastik bekasmu. Dengan sedikit
+                kreativitas, kamu bisa menyulapnya jadi pot indah untuk tanaman
+                hias. Panduan lengkap ini akan membimbingmu mulai dari persiapan
+                alat dan bahan, teknik pemotongan yang aman, hingga tips
+                menghias pot agar tampil menarik. Kamu juga bisa menambahkan
+                sistem drainase sederhana dan memilih tanaman yang pas untuk pot
+                daur ulang. Proyek DIY ini ideal untuk pemula dan bisa
+                dikerjakan bersama keluarga di akhir pekan.
               </p>
             </div>
             <div
@@ -343,66 +428,72 @@
               <i class="fa-solid fa-eye text-lg"></i>
               <span class="text-sm">2.5k Pembaca</span>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/martina.webp"
-                class="rounded-full w-8 h-8"
-                alt="author"
-              />
-              <span class="text-sm">Rina Kusuma</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <span>Baca Artikel</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/martina.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Rina Kusuma</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Baca Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 3 - Lifestyle Hijau -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <!-- Artikel 3 - Lifestyle Hijau -->
+        <div
+          class="flex md:flex-row flex-col rounded-xl bg-card group fade-up overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
-              src="assets/images/pantai-bali.webp"
+              src="assets/images/pantai-bali.jpeg"
               alt="zero-waste-shopping"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-leaf text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-leaf text-sm"></i>
                 <span class="text-sm">Lifestyle Hijau</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-clock text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-clock text-sm"></i>
                 <span class="text-sm">6 menit baca</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Belanja Tanpa Plastik: Panduan Zero Waste Shopping
+                Berbelanja Tanpa Plastik: Panduan Belanja Nol Sampah
               </h1>
               <p class="line-clamp-5">
-                Kenali toko yang ramah lingkungan, siapkan tas kain, dan pilih
-                produk isi ulang agar belanjamu lebih hijau. Panduan
-                komprehensif ini mencakup daftar toko zero waste di Indonesia,
-                tips membawa wadah sendiri, cara memilih produk dengan kemasan
-                biodegradable, dan strategi berbelanja curah untuk menghemat
-                uang sambil mengurangi sampah plastik. Termasuk juga rekomendasi
-                aplikasi yang membantu menemukan toko ramah lingkungan di
-                sekitarmu.
+                Temukan toko yang ramah lingkungan, siapkan tas kain, dan pilih
+                produk refill agar belanjamu lebih hijau. Panduan menyeluruh ini
+                memuat daftar toko zero waste di Indonesia, tips membawa wadah
+                sendiri, cara memilih produk dengan kemasan biodegradable, dan
+                strategi belanja curah untuk menghemat uang sekaligus menekan
+                sampah plastik. Dilengkapi juga rekomendasi aplikasi yang
+                membantu menemukan toko ramah lingkungan di sekitarmu.
               </p>
             </div>
             <div
@@ -411,29 +502,38 @@
               <i class="fa-solid fa-eye text-lg"></i>
               <span class="text-sm">3.1k Pembaca</span>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/alex-suprun.webp"
-                class="rounded-full w-8 h-8"
-                alt="author"
-              />
-              <span class="text-sm">Budi Santoso</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <span>Baca Artikel</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/alex-suprun.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Budi Santoso</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Baca Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 4 - Daur Ulang -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <!-- Artikel 4 - Daur Ulang -->
+        <div
+          class="flex md:flex-row flex-col rounded-xl bg-card group fade-up overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
               src="assets/images/sungai.webp"
@@ -443,34 +543,32 @@
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-recycle text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-recycle text-sm"></i>
                 <span class="text-sm">Daur Ulang</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-clock text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-clock text-sm"></i>
                 <span class="text-sm">7 menit baca</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Kenali Jenis Sampah Plastik dan Cara Daur Ulangnya
+                Pahami Jenis Sampah Plastik dan Cara Mendaur Ulangnya
               </h1>
               <p class="line-clamp-5">
-                Tidak semua plastik sama. Artikel ini membantumu memahami kode
-                daur ulang agar tidak salah buang sampah. Pelajari perbedaan
-                antara plastik PET, HDPE, PVC, LDPE, PP, PS, dan kategori
-                lainnya. Setiap jenis plastik memiliki karakteristik unik dan
-                cara daur ulang yang berbeda. Panduan visual dengan ilustrasi
-                kode daur ulang, contoh produk sehari-hari, dan informasi
-                tentang tempat daur ulang terdekat akan memudahkanmu dalam
-                memilah sampah dengan benar.
+                Tidak semua plastik itu sama. Artikel ini membantumu mengenali
+                kode daur ulang agar tidak keliru membuang sampah. Pelajari
+                perbedaan antara plastik PET, HDPE, PVC, LDPE, PP, PS, dan
+                kategori lainnya. Tiap jenis plastik punya karakteristik khusus
+                dan metode daur ulang yang berbeda. Panduan visual dengan
+                ilustrasi kode daur ulang, contoh produk sehari-hari, serta
+                informasi tentang tempat daur ulang terdekat akan mempermudahmu
+                dalam memilah sampah secara tepat.
               </p>
             </div>
             <div
@@ -479,27 +577,36 @@
               <i class="fa-solid fa-eye text-lg"></i>
               <span class="text-sm">4.3k Pembaca</span>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/amara-huang.webp"
-                class="rounded-full w-8 h-8"
-                alt="author"
-              />
-              <span class="text-sm">Lina Wijaya</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <span>Baca Artikel</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/amara-huang.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Lina Wijaya</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Baca Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <div
+          class="flex md:flex-row flex-col rounded-xl bg-card group fade-up overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
               src="assets/images/mangrove.webp"
@@ -509,32 +616,30 @@
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-leaf text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-leaf text-sm"></i>
                 <span class="text-sm">Lifestyle Hijau</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-clock text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-clock text-sm"></i>
                 <span class="text-sm">6 menit baca</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Cara Membuat Kompos Organik di Rumah
+                Panduan Membuat Kompos Organik di Rumah
               </h1>
               <p class="line-clamp-5">
-                Limbah dapur seperti sisa sayur dan buah bisa diubah menjadi
-                kompos organik yang bermanfaat untuk tanaman. Artikel ini
-                menjelaskan langkah sederhana mulai dari pemilihan wadah, proses
-                fermentasi, hingga cara menggunakan kompos untuk kebun atau pot
-                tanaman. Dengan membuat kompos, kamu tidak hanya mengurangi
-                sampah organik tapi juga memperbaiki kualitas tanah.
+                Limbah dapur seperti sisa sayur dan buah bisa disulap menjadi
+                kompos organik yang berguna bagi tanaman. Artikel ini mengulas
+                langkah sederhana dari pemilihan wadah, proses fermentasi,
+                hingga cara memanfaatkan kompos untuk kebun atau pot tanaman.
+                Dengan membuat kompos, kamu bukan hanya mengurangi sampah
+                organik melainkan juga memperbaiki kesuburan tanah.
               </p>
             </div>
             <div
@@ -543,29 +648,38 @@
               <i class="fa-solid fa-eye text-lg"></i>
               <span class="text-sm">980 Pembaca</span>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/pfp3.webp"
-                class="rounded-full w-8 h-8"
-                alt="author"
-              />
-              <span class="text-sm">Budi Santoso</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <span>Baca Artikel</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/pfp3.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Budi Santoso</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Baca Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- 4 - Tips -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <div
+          class="flex md:flex-row flex-col rounded-xl bg-card group fade-up overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
               src="assets/images/energy-saving.webp"
@@ -575,32 +689,30 @@
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-lightbulb text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-lightbulb text-sm"></i>
                 <span class="text-sm">Tips Harian</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-clock text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-clock text-sm"></i>
                 <span class="text-sm">4 menit baca</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                7 Cara Hemat Energi di Rumah
+                7 Tips Menghemat Energi di Rumah
               </h1>
               <p class="line-clamp-5">
-                Mengurangi penggunaan listrik tidak hanya menghemat biaya tetapi
-                juga membantu menurunkan emisi karbon. Beberapa cara mudah
-                termasuk mematikan lampu saat tidak digunakan, memilih lampu
-                LED, mencabut charger, hingga memanfaatkan cahaya alami di siang
-                hari. Langkah kecil ini dapat memberikan dampak besar jika
-                dilakukan secara konsisten.
+                Menekan konsumsi listrik bukan hanya menghemat biaya tetapi juga
+                turut menurunkan emisi karbon. Beberapa cara mudah di antaranya
+                mematikan lampu saat tidak dipakai, memilih lampu LED, mencabut
+                charger, hingga memanfaatkan cahaya matahari di siang hari.
+                Kebiasaan kecil ini bisa memberi dampak besar jika diterapkan
+                secara konsisten.
               </p>
             </div>
             <div
@@ -609,23 +721,28 @@
               <i class="fa-solid fa-eye text-lg"></i>
               <span class="text-sm">1.8k Pembaca</span>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/pfp1.webp"
-                class="rounded-full w-8 h-8"
-                alt="author"
-              />
-              <span class="text-sm">Siti Rahma</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+
+            <div
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <span>Baca Artikel</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/pfp1.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Siti Rahma</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Baca Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -687,7 +804,7 @@
         Next
       </a>
     </nav>
-    <!-- Footer -->
+    <!-- Bagian Kaki (Footer) -->
     <footer
       style="
         background: url('assets/images/footer-bg.webp');
@@ -698,24 +815,23 @@
     >
       <div class="absolute inset-0 bg-primary -z-1"></div>
       <div class="max-w-7xl mx-auto px-4 py-12">
-        <!-- Main Footer Content -->
+        <!-- Konten Utama Footer -->
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/20"
         >
-          <!-- About Section -->
+          <!-- Bagian Tentang -->
           <div class="flex flex-col space-y-4">
             <div class="flex items-center gap-1">
-              
               <h3 class="text-4xl font-bold text-white">Natura</h3>
             </div>
             <p class="text-white/80 text-sm leading-relaxed">
-              Platform inovatif untuk mengelola sampah plastik dan menciptakan
-              lingkungan yang lebih bersih dan berkelanjutan untuk generasi
-              mendatang.
+              Platform inovatif untuk mengolah sampah plastik dan membangun
+              lingkungan yang lebih bersih serta berkelanjutan bagi generasi
+              yang akan datang.
             </p>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Tautan Cepat -->
           <div class="flex flex-col space-y-4">
             <h4 class="text-lg font-bold">Tautan Cepat</h4>
             <ul class="space-y-2">
@@ -852,7 +968,7 @@
         <!-- Bottom Footer -->
         <div class="pt-8 flex justify-center gap-4">
           <p class="text-white/60 text-sm text-center md:text-left">
-            &copy; 2025 Natura. Semua hak dilindungi undang-undang.
+            &copy; 2026 Natura. Semua hak dilindungi undang-undang.
           </p>
         </div>
       </div>

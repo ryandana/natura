@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,75 +7,150 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/globals.css" />
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- favicon -->
+    <!-- Favikon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Icons (Font Awesome) -->
-    <link rel="stylesheet" href="libs/fontawesome-free-7.1.0-web/css/all.min.css" />
+    <!-- Ikon (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="libs/fontawesome-free-7.1.0-web/css/all.min.css"
+    />
 
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/animation.js"></script>
   </head>
   <body>
-    <!-- Header -->
-        <header class="w-full relative z-50 bg-white transition-all">
-      <div class="max-w-7xl mx-auto w-full flex md:justify-normal justify-between items-center gap-x-12 lg:gap-x-24 md:px-0 px-4 py-4">
+    <!-- Bagian Kepala (Header) -->
+    <header class="w-full relative z-50 bg-white transition-all">
+      <div
+        class="max-w-7xl mx-auto w-full flex md:justify-normal justify-between items-center gap-x-12 lg:gap-x-24 md:px-0 px-4 py-4"
+      >
         <!-- Logo -->
         <a class="flex gap-2 items-center" href="index.html">
-          <img class="h-12 w-12 bg-white p-1 rounded-full object-contain" src="assets/icons/logo-green.webp" alt="logo" />
+          <img
+            class="h-12 w-12 bg-white p-1 rounded-full object-contain"
+            src="assets/icons/logo.png"
+            alt="logo"
+          />
           <span class="font-bold text-xl md:text-2xl text-primary">Natura</span>
         </a>
 
-        <!-- Desktop Menu -->
+        <!-- Menu Desktop -->
         <div class="hidden md:flex justify-between items-center w-full gap-8">
           <ul class="flex gap-2 items-center">
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="index.html">Beranda</a></li>
-            <li><a class="font-bold text-primary bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="event.html">Event</a></li>
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="edukasi.html">Edukasi</a></li>
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="pickup.html">Kirim Sampah</a></li>
-            <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="marketplace.html">Marketplace</a></li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="index.html"
+              >
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-bold text-primary bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="event.html"
+              >
+                Event
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="edukasi.html"
+              >
+                Edukasi
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="pickup.html"
+              >
+                Kirim Sampah
+              </a>
+            </li>
+            <li>
+              <a
+                class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group"
+                href="marketplace.html"
+              >
+                Marketplace
+              </a>
+            </li>
           </ul>
 
-          <!-- Profile -->
+          <!-- Profil -->
           <div class="relative">
-            <button id="profileBtn" class="flex cursor-pointer items-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-primary px-4 py-2 rounded-full duration-200">
-              <img class="rounded-full w-8 h-8" src="assets/images/people/pfp.webp" alt="pfp" />
-              <i class="fa-solid fa-angle-down text-lg text-primary transition-transform duration-200" id="profileArrow"></i>
+            <button
+              id="profileBtn"
+              class="flex cursor-pointer items-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-primary px-4 py-2 rounded-full duration-200"
+            >
+              <img
+                class="rounded-full w-8 h-8"
+                src="assets/images/people/pfp.webp"
+                alt="pfp"
+              />
+              <i
+                class="fa-solid fa-angle-down text-lg text-primary transition-transform duration-200"
+                id="profileArrow"
+              ></i>
             </button>
-            <!-- Profile Popup -->
-            <div id="profilePopup" class="absolute right-0 top-18 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-[100]">
+            <!-- Popup Profil -->
+            <div
+              id="profilePopup"
+              class="absolute right-0 top-18 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-[100]"
+            >
               <div class="px-4 py-3 border-b border-gray-100">
                 <p class="font-bold text-primary">Jane Doe</p>
                 <p class="text-sm text-gray-500">janedoe@natura.com</p>
               </div>
-              <a href="profile.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors duration-150 cursor-pointer">
-                <i class="fa-solid fa-user text-primary text-lg w-5 text-center"></i>
+              <a
+                href="profile.html"
+                class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors duration-150 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-user text-primary text-lg w-5 text-center"
+                ></i>
                 <span class="text-gray-700 font-medium">Profile</span>
               </a>
-              <button class="flex items-center gap-3 w-full px-4 py-3 hover:bg-red-50 transition-colors duration-150 text-left">
-                <i class="fa-solid fa-door-open text-red-500 text-lg w-5 text-center"></i>
+              <button
+                class="flex items-center gap-3 w-full px-4 py-3 hover:bg-red-50 transition-colors duration-150 text-left"
+              >
+                <i
+                  class="fa-solid fa-door-open text-red-500 text-lg w-5 text-center"
+                ></i>
                 <span class="text-red-600 font-medium">Logout</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="md:hidden cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 relative z-[55]">
-          <i class="fa-solid fa-bars text-2xl transition-all duration-300" id="hamburgerIcon"></i>
-          <i class="fa-solid fa-xmark text-2xl absolute transition-all duration-300 opacity-0 scale-0" id="closeIcon"></i>
+        <!-- Tombol Menu Mobile -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 relative z-[55]"
+        >
+          <i
+            class="fa-solid fa-bars text-2xl transition-all duration-300"
+            id="hamburgerIcon"
+          ></i>
+          <i
+            class="fa-solid fa-xmark text-2xl absolute transition-all duration-300 opacity-0 scale-0"
+            id="closeIcon"
+          ></i>
         </button>
       </div>
     </header>
 
-    <!-- Mobile Menu -->
+    <!-- Menu Mobile -->
     <div
       id="mobileMenu"
       class="fixed inset-0 z-[9999] bg-white transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-between"
     >
-      <!-- Close Button -->
+      <!-- Tombol Tutup -->
       <div class="absolute top-6 right-6">
         <button
           id="closeMobileMenu"
@@ -122,7 +197,7 @@
 
       <div class="border-t border-gray-200 px-6 py-6 bg-gray-50">
         <div class="flex items-center gap-4">
-          <!-- Profile Picture -->
+          <!-- Foto Profil -->
           <img
             class="rounded-full w-14 h-14"
             src="assets/images/people/pfp.webp"
@@ -133,7 +208,9 @@
             <span class="font-semibold text-gray-800">Jane Doe</span>
             <span class="text-sm text-gray-500">janedoe@natura.com</span>
             <!-- Poin -->
-            <span class="text-sm font-medium text-primary">Saldo: Rp 245.000</span>
+            <span class="text-sm font-medium text-primary">
+              Saldo: Rp 245.000
+            </span>
           </div>
         </div>
 
@@ -154,7 +231,7 @@
         </div>
       </div>
     </div>
-    <!-- Breadcrumb -->
+    <!-- Navigasi Breadcrumb -->
     <div
       class="flex w-full items-center justify-center my-6 md:px-0 px-4 fade-up"
     >
@@ -191,7 +268,7 @@
             <div class="relative flex-1">
               <input
                 class="w-full py-4 px-16 bg-card rounded-2xl placeholder:text-gray-text outline-none text-primary"
-                placeholder="Ketik untuk mencari"
+                placeholder="Cari sesuatu..."
                 type="search"
                 name="search"
                 id="search"
@@ -222,33 +299,33 @@
           </div>
         </div>
       </div>
-      <div
-        class="mx-auto w-full max-w-7xl grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
-      >
-        <!-- 1 -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+      <div class="mx-auto w-full max-w-7xl flex flex-col gap-6">
+        <!-- Kartu Event 1 -->
+        <div
+          class="flex md:flex-row flex-col bg-white border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 rounded-2xl overflow-hidden transition-all duration-300 group fade-up"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
-              src="assets/images/pantai-bali-2.webp"
+              src="assets/images/pantai-bali.jpeg"
               alt="collecting-trash"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-calendar-days text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-calendar-days text-sm"></i>
                 <span class="text-sm">28 Oktober 2025</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-location-dot text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-location-dot text-sm"></i>
                 <span class="text-sm">Pantai Kuta, Bali</span>
               </div>
             </div>
@@ -257,171 +334,174 @@
                 Kampanye Bersih Pantai dan Kesadaran Lingkungan 2025
               </h1>
               <p class="line-clamp-5">
-                Kampanye Bersih Pantai dan Kesadaran Lingkungan 2025 adalah
-                gerakan kolaboratif yang mengajak masyarakat, komunitas lokal,
-                pelajar, hingga wisatawan untuk bersama-sama menjaga keindahan
-                Pantai Kuta, Bali. Melalui aksi nyata membersihkan sampah
-                plastik, edukasi pengelolaan limbah, serta diskusi interaktif
-                tentang dampak polusi laut, kegiatan ini bertujuan menumbuhkan
-                rasa cinta dan tanggung jawab terhadap bumi.
+                Kampanye Bersih Pantai dan Kesadaran Lingkungan 2025 merupakan
+                aksi kolaboratif yang mengundang masyarakat, komunitas lokal,
+                pelajar, hingga wisatawan untuk bahu-membahu menjaga keindahan
+                Pantai Kuta, Bali. Lewat aksi nyata membersihkan sampah plastik,
+                edukasi pengelolaan limbah, serta diskusi interaktif mengenai
+                dampak polusi laut, kegiatan ini bertujuan menumbuhkan kecintaan
+                dan rasa tanggung jawab terhadap bumi.
               </p>
             </div>
+
             <div
-              class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <i class="fa-solid fa-seedling text-lg"></i>
-              <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/pfp.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Ahmad Fauzi</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/pfp.webp"
-                class="rounded-full w-8 h-8"
-                alt="pfp"
-              />
-              <span class="text-sm">Ahmad Fauzi</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
-            >
-              
-              <span>Lebih Lanjut</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
           </div>
         </div>
-        <!-- 2 -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <!-- Kartu Event 2 -->
+        <div
+          class="flex md:flex-row flex-col bg-white border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 rounded-2xl overflow-hidden transition-all duration-300 group fade-up"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
-              src="assets/images/raja-ampat.webp"
+              src="assets/images/raja-ampat.jpeg"
               alt="coral-reef"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-calendar-days text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-calendar-days text-sm"></i>
                 <span class="text-sm">12 November 2025</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-location-dot text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-location-dot text-sm"></i>
                 <span class="text-sm">Raja Ampat</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Rehabilitasi Terumbu Karang untuk Laut yang Sehat
+                Pemulihan Terumbu Karang demi Lautan yang Lestari
               </h1>
               <p class="line-clamp-5">
-                Bersama komunitas lokal, kegiatan ini berfokus pada penanaman
-                bibit karang dan edukasi tentang pentingnya menjaga ekosistem
-                laut. Terumbu karang adalah rumah bagi ribuan spesies laut yang
-                kini terancam oleh polusi dan perubahan iklim.
+                Bersama komunitas setempat, kegiatan ini menitikberatkan pada
+                penanaman bibit karang serta edukasi tentang pentingnya
+                melestarikan ekosistem laut. Terumbu karang menjadi habitat bagi
+                ribuan spesies laut yang kini terancam oleh polusi dan perubahan
+                iklim.
               </p>
             </div>
+
             <div
-              class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <i class="fa-solid fa-seedling text-lg"></i>
-              <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/martina.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Maria Yohana</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/martina.webp"
-                class="rounded-full w-8 h-8"
-                alt="pfp"
-              />
-              <span class="text-sm">Maria Yohana</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
-            >
-              
-              <span>Lebih Lanjut</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
           </div>
         </div>
-        <!-- 3 -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <!-- Kartu Event 3 -->
+        <div
+          class="flex md:flex-row flex-col bg-white border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 rounded-2xl overflow-hidden transition-all duration-300 group fade-up"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
-              src="assets/images/workshop-sampah.webp"
+              src="assets/images/workshop-sampah.jpeg"
               alt="plastic-waste"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-calendar-days text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-calendar-days text-sm"></i>
                 <span class="text-sm">20 Januari 2026</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-location-dot text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-location-dot text-sm"></i>
                 <span class="text-sm">Jakarta Pusat</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Workshop Edukasi & Aksi Kurangi Sampah Plastik
+                Lokakarya Edukasi & Aksi Tekan Sampah Plastik
               </h1>
               <p class="line-clamp-5">
-                Melalui workshop kreatif, peserta diajak mengolah sampah plastik
-                menjadi produk baru sekaligus memahami dampak plastik sekali
+                Lewat lokakarya kreatif, peserta diajak mengubah sampah plastik
+                menjadi produk bernilai sekaligus memahami dampak plastik sekali
                 pakai terhadap lingkungan perkotaan.
               </p>
             </div>
+
             <div
-              class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <i class="fa-solid fa-seedling text-lg"></i>
-              <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/alex-suprun.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Siti Rahmawati</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/alex-suprun.webp"
-                class="rounded-full w-8 h-8"
-                alt="pfp"
-              />
-              <span class="text-sm">Siti Rahmawati</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
-            >
-              
-              <span>Lebih Lanjut</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
           </div>
         </div>
-        <!-- 4 -->
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <!-- Kartu Event 4 -->
+        <div
+          class="flex md:flex-row flex-col bg-white border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 rounded-2xl overflow-hidden transition-all duration-300 group fade-up"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
               src="assets/images/pencegahan-kebakaran.webp"
@@ -431,61 +511,61 @@
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-calendar-days text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-calendar-days text-sm"></i>
                 <span class="text-sm">15 Februari 2026</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-location-dot text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-location-dot text-sm"></i>
                 <span class="text-sm">Kalimantan Tengah</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Pencegahan Kebakaran Hutan dan Lahan
+                Penanggulangan Dini Kebakaran Hutan dan Lahan
               </h1>
               <p class="line-clamp-5">
-                Program ini mengedukasi masyarakat tentang bahaya pembakaran
-                lahan serta melatih relawan dalam teknik pemadaman dini. Dengan
-                kolaborasi antara komunitas lokal, pelajar, dan aparat desa,
-                kegiatan ini bertujuan mengurangi risiko kabut asap yang
-                berdampak luas pada kesehatan dan lingkungan.
+                Program ini memberikan edukasi kepada masyarakat mengenai bahaya
+                pembakaran lahan serta melatih relawan dalam teknik pemadaman
+                awal. Melalui kerja sama antara komunitas lokal, pelajar, dan
+                aparat desa, kegiatan ini bertujuan menekan risiko kabut asap
+                yang berdampak luas pada kesehatan dan lingkungan.
               </p>
             </div>
+
             <div
-              class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <i class="fa-solid fa-seedling text-lg"></i>
-              <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/amara-huang.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Andi Saputra</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/amara-huang.webp"
-                class="rounded-full w-8 h-8"
-                alt="pfp"
-              />
-              <span class="text-sm">Andi Saputra</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
-            >
-              
-              <span>Lebih Lanjut</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
           </div>
         </div>
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <div
+          class="flex md:flex-row flex-col bg-white border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 rounded-2xl overflow-hidden transition-all duration-300 group fade-up"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
               src="assets/images/mangrove.webp"
@@ -495,60 +575,60 @@
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-calendar-days text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-calendar-days text-sm"></i>
                 <span class="text-sm">10 Maret 2026</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-location-dot text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-location-dot text-sm"></i>
                 <span class="text-sm">Ekowisata, Surabaya</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Restorasi Mangrove untuk Pesisir yang Tangguh
+                Pemulihan Mangrove demi Pesisir yang Lebih Kuat
               </h1>
               <p class="line-clamp-5">
-                Event ini mengajak masyarakat dan pelajar untuk menanam bibit
-                mangrove di kawasan pesisir Surabaya. Mangrove berperan penting
-                dalam mencegah abrasi, menyerap karbon, serta menjadi habitat
-                bagi berbagai satwa pesisir.
+                Kegiatan ini mengundang masyarakat dan pelajar untuk menanam
+                bibit mangrove di kawasan pesisir Surabaya. Mangrove memiliki
+                peran vital dalam mencegah abrasi, menyerap karbon, serta
+                menyediakan habitat bagi beragam satwa pesisir.
               </p>
             </div>
+
             <div
-              class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <i class="fa-solid fa-seedling text-lg"></i>
-              <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/martina.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Dewi Kartika</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/martina.webp"
-                class="rounded-full w-8 h-8"
-                alt="pfp"
-              />
-              <span class="text-sm">Dewi Kartika</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
-            >
-              
-              <span>Lebih Lanjut</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
           </div>
         </div>
-        <div class="flex flex-col rounded-xl bg-card group fade-up">
-          <div class="relative overflow-hidden h-[250px] w-full rounded-t-xl">
+        <div
+          class="flex md:flex-row flex-col bg-white border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 rounded-2xl overflow-hidden transition-all duration-300 group fade-up"
+        >
+          <div
+            class="relative overflow-hidden h-[250px] md:h-auto md:min-h-[300px] w-full md:w-2/5 shrink-0"
+          >
             <img
               class="group-hover:scale-110 duration-500 transition-all w-full h-full object-cover"
               src="assets/images/sungai.webp"
@@ -558,56 +638,52 @@
               class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
             ></div>
           </div>
-          <div class="p-4 flex flex-col h-full flex-1 w-full space-y-4">
-            <div class="flex items-center gap-2 mb-3">
-              <div
-                class="bg-primary text-white px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-calendar-days text-lg"></i>
+          <div
+            class="p-6 md:p-8 flex flex-col h-full flex-1 w-full space-y-5 justify-center"
+          >
+            <div class="flex flex-col gap-1 mb-3">
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-calendar-days text-sm"></i>
                 <span class="text-sm">7 April 2026</span>
               </div>
-              <div
-                class="bg-secondary text-primary px-3 py-1 rounded-lg flex items-center gap-1"
-              >
-                <i class="fa-solid fa-location-dot text-lg"></i>
+              <div class="flex items-center gap-2 text-primary">
+                <i class="fa-solid fa-location-dot text-sm"></i>
                 <span class="text-sm">Sungai Citarum, Jawa Barat</span>
               </div>
             </div>
             <div class="flex flex-col flex-1 gap-3">
               <h1 class="text-3xl font-semibold text-primary">
-                Aksi Bersih Sungai & Edukasi Limbah
+                Gerakan Bersih Sungai & Edukasi Limbah
               </h1>
               <p class="line-clamp-5">
-                Sungai Citarum dikenal sebagai salah satu sungai paling tercemar
-                di dunia. Melalui aksi bersih-bersih dan edukasi pengelolaan
-                limbah, komunitas ini berupaya mengembalikan fungsi sungai
-                sebagai sumber kehidupan masyarakat.
+                Sungai Citarum dikenal sebagai salah satu sungai paling
+                terpolusi di dunia. Lewat aksi bersih-bersih dan edukasi
+                pengelolaan limbah, komunitas ini berupaya memulihkan fungsi
+                sungai sebagai sumber penghidupan masyarakat.
               </p>
             </div>
+
             <div
-              class="bg-secondary/70 text-primary w-fit px-3 py-1 rounded-lg flex items-center gap-1"
+              class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-6 border-t border-gray-100"
             >
-              <i class="fa-solid fa-seedling text-lg"></i>
-              <span class="text-sm">+Rp 50.000 untuk Partisipasi</span>
+              <div class="flex items-center gap-x-3 text-primary">
+                <img
+                  src="assets/images/people/amara-huang.webp"
+                  class="rounded-full w-10 h-10 object-cover"
+                  alt="author"
+                />
+                <span class="font-medium">Lestari Anindya</span>
+              </div>
+              <a
+                href="detail.html"
+                class="w-full sm:w-auto bg-primary text-white py-2.5 px-6 rounded-xl font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-primary/95 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+              >
+                <span>Selengkapnya</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-lg opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all"
+                ></i>
+              </a>
             </div>
-            <div class="flex items-center gap-x-2 text-primary">
-              <img
-                src="assets/images/people/amara-huang.webp"
-                class="rounded-full w-8 h-8"
-                alt="pfp"
-              />
-              <span class="text-sm">Lestari Anindya</span>
-            </div>
-            <a
-              href="detail.html"
-              class="w-full bg-primary mt-auto text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
-            >
-              
-              <span>Lebih Lanjut</span>
-              <i
-                class="fa-solid fa-arrow-up-right-from-square text-xl opacity-0 group-hover:opacity-100 -ml-2 group-hover:ml-0 transition-all"
-              ></i>
-            </a>
           </div>
         </div>
       </div>
@@ -670,7 +746,7 @@
         </a>
       </nav>
     </section>
-    <!-- Footer -->
+    <!-- Bagian Kaki (Footer) -->
     <footer
       style="
         background: url('assets/images/footer-bg.webp');
@@ -681,24 +757,23 @@
     >
       <div class="absolute inset-0 bg-primary -z-1"></div>
       <div class="max-w-7xl mx-auto px-4 py-12">
-        <!-- Main Footer Content -->
+        <!-- Konten Utama Footer -->
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/20"
         >
-          <!-- About Section -->
+          <!-- Bagian Tentang -->
           <div class="flex flex-col space-y-4">
             <div class="flex items-center gap-1">
-              
               <h3 class="text-4xl font-bold text-white">Natura</h3>
             </div>
             <p class="text-white/80 text-sm leading-relaxed">
-              Platform inovatif untuk mengelola sampah plastik dan menciptakan
-              lingkungan yang lebih bersih dan berkelanjutan untuk generasi
-              mendatang.
+              Platform inovatif untuk mengolah sampah plastik dan membangun
+              lingkungan yang lebih bersih serta berkelanjutan bagi generasi
+              yang akan datang.
             </p>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Tautan Cepat -->
           <div class="flex flex-col space-y-4">
             <h4 class="text-lg font-bold">Tautan Cepat</h4>
             <ul class="space-y-2">
@@ -750,7 +825,7 @@
             </ul>
           </div>
 
-          <!-- Services -->
+          <!-- Layanan -->
           <div class="flex flex-col space-y-4">
             <h4 class="text-lg font-bold">Layanan</h4>
             <ul class="space-y-2">

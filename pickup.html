@@ -7,12 +7,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/globals.css" />
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- favicon -->
+    <!-- Favikon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!-- Icons (Font Awesome) -->
+    <!-- Ikon (Font Awesome) -->
     <link rel="stylesheet" href="libs/fontawesome-free-7.1.0-web/css/all.min.css" />
 
     <script src="assets/js/navbar.js"></script>
@@ -22,16 +22,16 @@
     <script src="assets/js/imageinput.js"></script>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Bagian Kepala (Header) -->
         <header class="w-full relative z-50 bg-white transition-all">
       <div class="max-w-7xl mx-auto w-full flex md:justify-normal justify-between items-center gap-x-12 lg:gap-x-24 md:px-0 px-4 py-4">
         <!-- Logo -->
         <a class="flex gap-2 items-center" href="index.html">
-          <img class="h-12 w-12 bg-white p-1 rounded-full object-contain" src="assets/icons/logo-green.webp" alt="logo" />
+          <img class="h-12 w-12 bg-white p-1 rounded-full object-contain" src="assets/icons/logo.png" alt="logo" />
           <span class="font-bold text-xl md:text-2xl text-primary">Natura</span>
         </a>
 
-        <!-- Desktop Menu -->
+        <!-- Menu Desktop -->
         <div class="hidden md:flex justify-between items-center w-full gap-8">
           <ul class="flex gap-2 items-center">
             <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="index.html">Beranda</a></li>
@@ -41,13 +41,13 @@
             <li><a class="font-semibold text-gray-600 hover:text-primary hover:bg-primary/10 text-lg px-4 py-2 rounded-full transition-colors duration-200 relative group" href="marketplace.html">Marketplace</a></li>
           </ul>
 
-          <!-- Profile -->
+          <!-- Profil -->
           <div class="relative">
             <button id="profileBtn" class="flex cursor-pointer items-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-primary px-4 py-2 rounded-full duration-200">
               <img class="rounded-full w-8 h-8" src="assets/images/people/pfp.webp" alt="pfp" />
               <i class="fa-solid fa-angle-down text-lg text-primary transition-transform duration-200" id="profileArrow"></i>
             </button>
-            <!-- Profile Popup -->
+            <!-- Popup Profil -->
             <div id="profilePopup" class="absolute right-0 top-18 w-48 bg-white border border-gray-100 rounded-xl shadow-xl py-2 opacity-0 invisible transform translate-y-2 transition-all duration-200 z-[100]">
               <div class="px-4 py-3 border-b border-gray-100">
                 <p class="font-bold text-primary">Jane Doe</p>
@@ -65,7 +65,7 @@
           </div>
         </div>
 
-        <!-- Mobile Menu Button -->
+        <!-- Tombol Menu Mobile -->
         <button id="mobileMenuBtn" class="md:hidden cursor-pointer flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors duration-200 relative z-[55]">
           <i class="fa-solid fa-bars text-2xl transition-all duration-300" id="hamburgerIcon"></i>
           <i class="fa-solid fa-xmark text-2xl absolute transition-all duration-300 opacity-0 scale-0" id="closeIcon"></i>
@@ -73,12 +73,12 @@
       </div>
     </header>
 
-    <!-- Mobile Menu -->
+    <!-- Menu Mobile -->
     <div
       id="mobileMenu"
       class="fixed inset-0 z-[9999] bg-white transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col justify-between"
     >
-      <!-- Close Button -->
+      <!-- Tombol Tutup -->
       <div class="absolute top-6 right-6">
         <button
           id="closeMobileMenu"
@@ -125,7 +125,7 @@
 
       <div class="border-t border-gray-200 px-6 py-6 bg-gray-50">
         <div class="flex items-center gap-4">
-          <!-- Profile Picture -->
+          <!-- Foto Profil -->
           <img
             class="rounded-full w-14 h-14"
             src="assets/images/people/pfp.webp"
@@ -157,7 +157,7 @@
         </div>
       </div>
     </div>
-    <!-- Breadcrumb -->
+    <!-- Navigasi Breadcrumb -->
     <div
       class="flex w-full items-center justify-center my-6 md:px-0 px-4 fade-up"
     >
@@ -189,7 +189,7 @@
       <div
         class="mx-auto max-w-7xl w-full flex flex-col lg:flex-row lg:justify-between justify-center items-center gap-8 lg:gap-12"
       >
-        <!-- Image Container -->
+        <!-- Wadah Gambar -->
         <div
           class="flex w-full lg:w-1/2 h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] order-2 lg:order-1 justify-center items-center fade-up"
         >
@@ -254,7 +254,7 @@
                     alt="Preview"
                     class="rounded-xl max-h-60 mx-auto block"
                   />
-                  <!-- Scanner overlay -->
+                  <!-- Overlay Pemindai -->
                   <div id="scannerOverlay" class="absolute inset-0 bg-primary/40 flex flex-col items-center justify-center backdrop-blur-[2px] z-10 hidden">
                     <i class="fa-solid fa-expand text-white text-4xl animate-pulse mb-2"></i>
                     <p class="text-white font-semibold text-sm animate-pulse">AI Sedang Menganalisis...</p>
@@ -262,7 +262,7 @@
                   </div>
                 </div>
 
-                <!-- AI Result Card -->
+                <!-- Kartu Hasil AI -->
                 <div id="aiResultCard" class="bg-primary/5 rounded-xl border border-primary/20 p-4 w-full max-w-sm hidden mt-2">
                   <h3 class="text-primary font-bold text-sm mb-3 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-robot"></i> Hasil Analisis AI
@@ -326,7 +326,7 @@
       </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal Konfirmasi -->
     <div
       id="popupModal"
       class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4 overflow-y-auto"
@@ -334,7 +334,7 @@
       <div
         class="relative w-full max-w-4xl my-auto transform overflow-hidden rounded-3xl bg-white transition-all"
       >
-        <!-- Close Button -->
+        <!-- Tombol Tutup -->
         <button
           id="closeModal"
           class="absolute right-4 top-4 z-10 rounded-full backdrop-blur-sm transition-all hover:scale-110 active:scale-95"
@@ -461,7 +461,7 @@
                 <i class="fa-solid fa-circle-info text-primary text-xl mt-0.5"></i>
                 <div>
                   <p class="font-semibold text-primary mb-2">
-                    Mohon Diperhatikan:
+                    Hal Penting:
                   </p>
                   <ul class="space-y-1 list-disc text-sm text-gray-600">
                     <li>Pastikan sampah sudah dipilah dengan benar</li>
@@ -504,7 +504,7 @@
       class="min-h-dvh w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-8 pb-12 sm:pb-20 mt-12"
     >
       <div class="mx-auto max-w-7xl w-full">
-        <!-- Header -->
+        <!-- Judul -->
         <div
           class="flex flex-col items-center gap-3 sm:gap-4 mb-8 sm:mb-12 fade-up"
         >
@@ -531,7 +531,7 @@
         <div
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6"
         >
-          <!-- Card 1 -->
+          <!-- Kartu Lokasi 1 -->
           <div
             class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
           >
@@ -582,7 +582,7 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
+          <!-- Kartu Lokasi 2 -->
           <div
             class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
           >
@@ -633,7 +633,7 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
+          <!-- Kartu Lokasi 3 -->
           <div
             class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
           >
@@ -684,7 +684,7 @@
             </div>
           </div>
 
-          <!-- Card 4 -->
+          <!-- Kartu Lokasi 4 -->
           <div
             class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
           >
@@ -735,7 +735,7 @@
             </div>
           </div>
 
-          <!-- Card 5 -->
+          <!-- Kartu Lokasi 5 -->
           <div
             class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
           >
@@ -786,7 +786,7 @@
             </div>
           </div>
 
-          <!-- Card 6 -->
+          <!-- Kartu Lokasi 6 -->
           <div
             class="bg-card rounded-xl p-4 sm:p-5 lg:p-6 fade-up transition-shadow duration-300"
           >
@@ -1021,9 +1021,9 @@
               <h3 class="text-4xl font-bold text-white">Natura</h3>
             </div>
             <p class="text-white/80 text-sm leading-relaxed">
-              Platform inovatif untuk mengelola sampah plastik dan menciptakan
-              lingkungan yang lebih bersih dan berkelanjutan untuk generasi
-              mendatang.
+              Platform inovatif untuk mengolah sampah plastik dan membangun
+              lingkungan yang lebih bersih serta berkelanjutan bagi generasi
+              yang akan datang.
             </p>
           </div>
 
@@ -1160,7 +1160,7 @@
 
         <div class="pt-8 flex justify-center gap-4">
           <p class="text-white/60 text-sm text-center md:text-left">
-            &copy; 2025 Natura. Semua hak dilindungi undang-undang.
+            &copy; 2026 Natura. Semua hak dilindungi undang-undang.
           </p>
         </div>
       </div>

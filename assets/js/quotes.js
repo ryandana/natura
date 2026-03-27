@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Daftar kutipan (quotes) tentang lingkungan
   const quotes = [
     {
       text: "Alam tidak membutuhkan manusia. Manusia yang membutuhkan alam.",
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let currentIndex = 0;
 
+  // Fungsi untuk menampilkan kutipan berdasarkan indeks
   function showQuote(index) {
     const selected = quotes[index];
     const quoteBox = document.getElementById('quote-box');
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const quoteAuthor = document.getElementById('quote-author');
 
     if (quoteBox) {
+      // Efek transisi pudar (fade) saat mengganti kutipan
       quoteBox.style.transition = 'opacity 0.5s ease';
       quoteBox.style.opacity = '0';
       
@@ -38,8 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Tampilkan kutipan pertama saat halaman dimuat
   showQuote(currentIndex);
 
+  // Ganti kutipan secara otomatis setiap 6 detik
   setInterval(() => {
     currentIndex = (currentIndex + 1) % quotes.length;
     showQuote(currentIndex);
